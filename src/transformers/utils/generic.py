@@ -1079,14 +1079,6 @@ def merge_with_config_defaults(func):
     return wrapper
 
 
-# bc for check_model_inputs:
-
-
-def check_model_inputs(func):
-    logger.warning_once("The `check_model_inputs` decorator is deprecated in favor of `merge_with_config_defaults`.")
-    return merge_with_config_defaults(func)
-
-
 def no_inherit_decorator(obj: T) -> T:
     """
     Identity decorator that prevents the modular converter from propagating its decorators to specific files.
