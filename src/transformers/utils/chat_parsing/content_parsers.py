@@ -19,7 +19,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-import regex as re
+import pcre as re
 
 
 def _text(text: str, args: dict) -> str:

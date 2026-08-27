@@ -31,7 +31,8 @@ python utils/sort_auto_mappings.py --check_only
 
 import argparse
 import os
-import re
+
+import pcre as re
 
 
 CHECKER_CONFIG = {

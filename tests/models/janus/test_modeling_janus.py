@@ -13,11 +13,11 @@
 # limitations under the License.
 """Testing suite for the PyTorch Janus model."""
 
-import re
 import tempfile
 import unittest
 from functools import reduce
 
+import pcre as re
 import pytest
 import requests
 

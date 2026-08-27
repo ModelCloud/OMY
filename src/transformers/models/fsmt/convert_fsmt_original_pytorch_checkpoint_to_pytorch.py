@@ -21,11 +21,11 @@
 import argparse
 import json
 import os
-import re
 from collections import OrderedDict
 from os.path import basename, dirname
 
 import fairseq
+import pcre as re
 import torch
 from fairseq import hub_utils
 from fairseq.data.dictionary import Dictionary

@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
 from dataclasses import dataclass
 
+import pcre as re
 import torch
 import torch.nn as nn
 from huggingface_hub.dataclasses import strict

@@ -13,8 +13,8 @@
 # limitations under the License.
 
 import argparse
-import re
 
+import pcre as re
 from laion_clap import CLAP_Module
 
 from transformers import AutoFeatureExtractor, ClapConfig, ClapModel

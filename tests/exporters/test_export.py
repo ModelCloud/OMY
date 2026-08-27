@@ -16,8 +16,8 @@ import copy
 import functools
 import inspect
 import itertools
-import re
 
+import pcre as re
 import pytest
 import torch
 from parameterized import parameterized

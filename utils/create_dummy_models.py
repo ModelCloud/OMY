@@ -20,13 +20,13 @@ import inspect
 import json
 import multiprocessing
 import os
-import re
 import shutil
 import tempfile
 import time
 import traceback
 from pathlib import Path
 
+import pcre as re
 from check_config_docstrings import get_checkpoint_from_config_class
 from datasets import load_dataset
 from get_test_info import get_model_to_tester_mapping, get_test_module, get_tester_classes_for_model

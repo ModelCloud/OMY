@@ -16,13 +16,13 @@ import glob
 import importlib
 import multiprocessing as mp
 import os
-import re
 import subprocess
 from abc import ABC, abstractmethod
 from collections import Counter, defaultdict, deque
 from functools import partial
 
 import libcst as cst
+import pcre as re
 from create_dependency_mapping import find_priority_list
 from libcst import ClassDef, CSTVisitor
 from libcst import matchers as m

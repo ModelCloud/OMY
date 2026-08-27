@@ -16,9 +16,10 @@
 import functools
 import json
 import os
-import re
 from contextlib import contextmanager, redirect_stdout
 from io import StringIO
+
+import pcre as re
 
 from .distributed.utils import _get_torch_distributed_rank
 from .utils import logging

@@ -18,7 +18,6 @@ import math
 import os
 import os.path
 import random
-import re
 import tempfile
 import unittest.mock
 import warnings
@@ -28,6 +27,7 @@ from copy import deepcopy
 from unittest.mock import Mock, patch
 
 import numpy as np
+import pcre as re
 import pytest
 from parameterized import parameterized
 from pytest import mark

@@ -13,9 +13,10 @@
 # limitations under the License.
 """Testing suite for the PyTorch DeepseekVLHybrid model."""
 
-import re
 import tempfile
 import unittest
+
+import pcre as re
 
 from transformers import (
     AutoProcessor,

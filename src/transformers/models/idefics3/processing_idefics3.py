@@ -15,11 +15,11 @@
 Processor class for Idefics3.
 """
 
-import re
 from itertools import accumulate
 from typing import TYPE_CHECKING, Union
 
 import numpy as np
+import pcre as re
 
 from ...feature_extraction_utils import BatchFeature
 from ...image_utils import ImageInput, is_valid_image

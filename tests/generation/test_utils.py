@@ -19,13 +19,13 @@ import gc
 import inspect
 import os
 import random
-import re
 import tempfile
 import unittest
 import warnings
 from pathlib import Path
 
 import numpy as np
+import pcre as re
 import pytest
 from parameterized import parameterized
 

@@ -13,7 +13,6 @@
 # limitations under the License.
 import difflib
 import os
-import re
 import subprocess
 import textwrap
 from collections.abc import Callable
@@ -21,6 +20,7 @@ from datetime import date
 from pathlib import Path
 from typing import Annotated, Any, cast
 
+import pcre as re
 import typer
 
 from ..utils import is_libcst_available

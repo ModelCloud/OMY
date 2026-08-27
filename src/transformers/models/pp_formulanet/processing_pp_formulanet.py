@@ -18,7 +18,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
+import pcre as re
 
 from ...image_processing_utils import BatchFeature
 from ...image_utils import ImageInput

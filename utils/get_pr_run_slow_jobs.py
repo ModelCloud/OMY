@@ -1,7 +1,8 @@
 import argparse
 import json
-import re
 import string
+
+import pcre as re
 
 
 MAX_NUM_JOBS_TO_SUGGEST = 16

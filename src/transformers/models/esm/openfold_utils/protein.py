@@ -16,12 +16,12 @@
 """Protein data type."""
 
 import dataclasses
-import re
 import string
 from collections.abc import Iterator, Mapping, Sequence
 from typing import Any
 
 import numpy as np
+import pcre as re
 
 from . import residue_constants
 

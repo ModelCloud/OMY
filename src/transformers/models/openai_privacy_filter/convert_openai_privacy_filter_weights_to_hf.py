@@ -20,7 +20,7 @@ import shutil
 from collections.abc import Iterable
 from pathlib import Path
 
-import regex as re
+import pcre as re
 import tiktoken
 import torch
 from safetensors.torch import load_file as safe_load

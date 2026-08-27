@@ -16,12 +16,12 @@
 import copy
 import inspect
 import random
-import re
 import tempfile
 import time
 import unittest
 
 import numpy as np
+import pcre as re
 import pytest
 from huggingface_hub import hf_hub_download
 from parameterized import parameterized

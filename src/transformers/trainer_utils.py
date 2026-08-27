@@ -23,7 +23,6 @@ import inspect
 import json
 import os
 import random
-import re
 import shutil
 import threading
 import time
@@ -33,6 +32,7 @@ from pathlib import Path
 from typing import Any, NamedTuple, TypeGuard
 
 import numpy as np
+import pcre as re
 
 from .utils import (
     SAFE_WEIGHTS_INDEX_NAME,

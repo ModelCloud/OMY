@@ -18,11 +18,11 @@ URL: https://github.com/facebookresearch/ijepa
 
 import argparse
 import gc
-import re
 from io import BytesIO
 from pathlib import Path
 
 import httpx
+import pcre as re
 import torch
 from PIL import Image
 

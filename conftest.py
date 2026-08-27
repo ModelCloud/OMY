@@ -19,7 +19,6 @@ import doctest
 import errno
 import functools
 import os
-import re
 import sys
 import tempfile
 import warnings
@@ -27,6 +26,7 @@ from os.path import abspath, dirname, join
 from unittest import mock
 
 import _pytest
+import pcre as re
 import pytest
 
 from transformers.testing_utils import (

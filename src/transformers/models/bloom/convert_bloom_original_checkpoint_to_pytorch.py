@@ -16,8 +16,8 @@
 import argparse
 import json
 import os
-import re
 
+import pcre as re
 import torch
 
 from transformers import BloomConfig, BloomModel

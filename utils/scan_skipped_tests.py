@@ -15,8 +15,9 @@
 
 import argparse
 import json
-import re
 from pathlib import Path
+
+import pcre as re
 
 
 REPO_ROOT = Path().cwd()

@@ -18,7 +18,6 @@ import functools
 import inspect
 import json
 import os
-import re
 import sys
 import warnings
 from abc import abstractmethod
@@ -32,6 +31,7 @@ from threading import Thread
 from typing import TYPE_CHECKING, Any, TypeVar, get_type_hints, overload
 from zipfile import is_zipfile
 
+import pcre as re
 import torch
 from huggingface_hub import is_offline_mode, split_torch_state_dict_into_shards
 from packaging import version

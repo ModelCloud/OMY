@@ -20,11 +20,11 @@ Also supports converting the SlimSAM checkpoints from https://github.com/czg1225
 """
 
 import argparse
-import re
 from io import BytesIO
 
 import httpx
 import numpy as np
+import pcre as re
 import torch
 from huggingface_hub import hf_hub_download
 from PIL import Image

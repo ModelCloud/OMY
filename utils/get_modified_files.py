@@ -18,9 +18,10 @@
 # it uses git to find the forking point and which files were modified - i.e. files not under git won't be considered
 # since the output of this script is fed into Makefile commands it doesn't print a newline after the results
 
-import re
 import subprocess
 import sys
+
+import pcre as re
 
 
 fork_point_sha = subprocess.check_output("git merge-base main HEAD".split()).decode("utf-8")

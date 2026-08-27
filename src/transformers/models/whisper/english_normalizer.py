@@ -13,13 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
 import unicodedata
 from collections.abc import Iterator
 from fractions import Fraction
-from re import Match
 
-import regex
+import pcre as re
+from pcre import Match
 
 
 # non-ASCII letters that are not separated by "NFKD" normalization
@@ -85,7 +84,7 @@ class BasicTextNormalizer:
         s = self.clean(s).lower()
 
         if self.split_letters:
-            s = " ".join(regex.findall(r"\X", s, regex.U))
+            s = " ".join(re.findall(r"\X", s, re.U))
 
         s = re.sub(r"\s+", " ", s)  # replace any successive whitespace characters with a space
 

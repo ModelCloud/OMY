@@ -18,9 +18,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import re
-
 import numpy as np
+import pcre as re
 
 from ...audio_utils import AudioInput
 from ...feature_extraction_utils import BatchFeature

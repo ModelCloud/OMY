@@ -25,10 +25,11 @@ Usage:
 import hashlib
 import json
 import os
-import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
+
+import pcre as re
 
 # github_utils is present because the workflow checks out the repo.
 from github_utils import get_github_json, github_request

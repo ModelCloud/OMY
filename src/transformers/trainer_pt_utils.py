@@ -22,7 +22,6 @@ import io
 import json
 import math
 import os
-import re
 import sys
 import warnings
 from collections.abc import Iterator, Mapping
@@ -33,6 +32,7 @@ from logging import StreamHandler
 from typing import Any
 
 import numpy as np
+import pcre as re
 import torch
 import torch.distributed as dist
 from packaging import version

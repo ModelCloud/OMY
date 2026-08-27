@@ -17,10 +17,10 @@ import collections
 import copy
 import inspect
 import math
-import re
 import unittest
 from functools import cached_property
 
+import pcre as re
 from datasets import load_dataset
 
 from transformers import (

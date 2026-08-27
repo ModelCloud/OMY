@@ -17,8 +17,8 @@ import argparse
 import glob
 import json
 import os
-import re
 
+import pcre as re
 import torch
 from huggingface_hub import HfApi, save_torch_state_dict, snapshot_download
 from safetensors.torch import load_file

@@ -39,7 +39,6 @@ To create the package for pypi.
 6. Have a core maintainer review and approve the deployment to pypi.
 """
 
-import re
 import shutil
 import sys
 from pathlib import Path
@@ -118,7 +117,7 @@ _deps = [
     "pytest-xdist",
     "pytest-order",
     "python>=3.10.0",
-    "regex>=2025.10.22",
+    "PyPcre>=0.6.2",
     "rhoknp>=1.1.0,<1.3.1",
     "rjieba",
     "rouge-score!=0.0.7,!=0.0.8,!=0.1,!=0.1.1",
@@ -163,9 +162,19 @@ _deps = [
     "ray[tune]>=2.7.0",
 ]
 
+
+def _dep_name(dep: str) -> str:
+    # Extract the package name (including extras) before any version specifier, environment
+    # marker, or whitespace, without using stdlib `re` at build time.
+    for i, ch in enumerate(dep):
+        if ch in " =<>!~;":
+            return dep[:i]
+    return dep
+
+
 # This is a lookup table with items like: {"tokenizers": "tokenizers==0.9.4", "packaging": "packaging"}, i.e.
 # some of the values are versioned whereas others aren't.
-deps = {b: a for a, b in (re.findall(r"^(([^!=<>~ ]+)(?:[!=<>~ ].*)?$)", x)[0] for x in _deps)}
+deps = {_dep_name(x): x for x in _deps}
 
 
 def deps_list(*pkgs):
@@ -264,7 +273,7 @@ install_requires = [
     deps["numpy"],
     deps["packaging"],  # utilities from PyPA to e.g., compare versions
     deps["pyyaml"],  # used for the model cards metadata
-    deps["regex"],  # for OpenAI GPT
+    deps["PyPcre"],  # PCRE2-based, GIL-friendly thread-safe regex engine
     deps["tokenizers"],
     deps["typer"],  # CLI utilities. In practice, already a dependency of huggingface_hub but we use it as well
     deps["safetensors"],

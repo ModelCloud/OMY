@@ -13,10 +13,10 @@
 # limitations under the License.
 
 import argparse
-import re
 from io import BytesIO
 
 import httpx
+import pcre as re
 import torch
 
 # git clone https://github.com/salesforce/BLIP.git

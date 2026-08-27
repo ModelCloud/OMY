@@ -16,9 +16,9 @@ import argparse
 import datetime
 import json
 import os
-import re
 from pathlib import Path
 
+import pcre as re
 import yaml
 from tqdm import tqdm
 

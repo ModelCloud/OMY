@@ -721,7 +721,7 @@ class ViltForMaskedLM(ViltPreTrainedModel):
         >>> import httpx
         >>> from io import BytesIO
         >>> from PIL import Image
-        >>> import re
+        >>> import pcre as re
         >>> import torch
 
         >>> url = "http://images.cocodataset.org/val2017/000000039769.jpg"

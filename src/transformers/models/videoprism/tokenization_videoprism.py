@@ -19,8 +19,7 @@
 # limitations under the License.
 
 
-import re
-
+import pcre as re
 from tokenizers import Tokenizer, decoders, normalizers, pre_tokenizers
 from tokenizers.models import Unigram
 

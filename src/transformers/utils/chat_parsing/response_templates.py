@@ -18,7 +18,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-import regex as re
+import pcre as re
 
 from ...utils import logging
 from .content_parsers import CONTENT_PARSERS, validate_transform_strings

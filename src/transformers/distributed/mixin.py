@@ -14,9 +14,10 @@
 from __future__ import annotations
 
 import os
-import re
 import warnings
 from typing import TYPE_CHECKING
+
+import pcre as re
 
 from ..utils import is_torch_greater_or_equal, logging
 from ..utils.hub import create_and_tag_model_card

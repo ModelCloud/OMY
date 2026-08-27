@@ -15,11 +15,11 @@
 Tokenizer class for Nougat.
 """
 
-import re
 from functools import partial
 from multiprocessing import Pool
 
 import numpy as np
+import pcre as re
 from tokenizers import Tokenizer, decoders, normalizers, pre_tokenizers, processors
 from tokenizers.models import BPE
 

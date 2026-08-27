@@ -13,7 +13,8 @@
 # limitations under the License.
 
 import inspect
-import re
+
+import pcre as re
 
 from transformers.utils import direct_transformers_import
 

@@ -48,10 +48,11 @@ python utils/check_reviewers.py --strict   # also fail on non-model paths with n
 
 import argparse
 import os
-import re
 import subprocess
 import sys
 from pathlib import Path
+
+import pcre as re
 
 
 CHECKER_CONFIG = {

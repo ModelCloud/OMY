@@ -15,8 +15,9 @@
 
 import json
 import os
-import re
 import unicodedata
+
+import pcre as re
 
 from ...tokenization_python import PreTrainedTokenizer
 from ...utils import logging

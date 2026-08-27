@@ -18,9 +18,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
-
 import numpy as np
+import pcre as re
 
 from ...processing_utils import MultiModalData, ProcessingKwargs, ProcessorMixin
 from ...utils import auto_docstring, logging

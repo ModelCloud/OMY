@@ -16,10 +16,10 @@
 import collections
 import json
 import os
-import re
 import sys
 
 import numpy as np
+import pcre as re
 
 from ...tokenization_python import PreTrainedTokenizer
 from ...utils import logging

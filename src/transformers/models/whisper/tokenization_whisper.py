@@ -15,10 +15,10 @@
 
 import json
 import os
-import re
 from functools import lru_cache
 
 import numpy as np
+import pcre as re
 from tokenizers import AddedToken, Tokenizer, decoders, pre_tokenizers, processors
 from tokenizers.models import BPE
 

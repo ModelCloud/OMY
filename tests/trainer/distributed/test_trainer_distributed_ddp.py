@@ -18,8 +18,8 @@ DDP-specific distributed trainer tests.
 
 import json
 import os
-import re
 
+import pcre as re
 from parameterized import parameterized
 
 from transformers.testing_utils import (

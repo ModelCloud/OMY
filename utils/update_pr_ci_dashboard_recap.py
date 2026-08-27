@@ -17,11 +17,12 @@
 
 import json
 import os
-import re
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+
+import pcre as re
 
 # GitHub REST calls go through the shared helper (rate-limit handling, no anonymous fallback, fail
 # hard on a rejected token); the local `request_json` below is kept only for the Grafana proxy.

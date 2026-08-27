@@ -18,11 +18,11 @@ import functools
 import json
 import operator
 import os
-import re
 import sys
 import time
 from typing import Any
 
+import pcre as re
 from compare_test_runs import compare_job_sets
 from get_ci_error_statistics import get_jobs
 from get_previous_daily_ci import get_last_daily_ci_reports, get_last_daily_ci_run, get_last_daily_ci_workflow_run_id

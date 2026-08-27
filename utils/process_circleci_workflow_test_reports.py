@@ -14,9 +14,9 @@
 import argparse
 import json
 import os
-import re
 from collections import Counter
 
+import pcre as re
 import requests
 
 

@@ -14,12 +14,12 @@
 """Tokenization class for SigLIP model."""
 
 import os
-import re
 import string
 import warnings
 from shutil import copyfile
 from typing import TYPE_CHECKING, Any
 
+import pcre as re
 import sentencepiece as spm
 
 from ...tokenization_utils_base import AddedToken

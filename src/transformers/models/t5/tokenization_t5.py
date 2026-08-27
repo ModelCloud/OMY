@@ -13,8 +13,7 @@
 # limitations under the License.
 """Tokenization class for model T5."""
 
-import re
-
+import pcre as re
 from tokenizers import Tokenizer, decoders, normalizers, pre_tokenizers, processors
 from tokenizers.models import Unigram
 

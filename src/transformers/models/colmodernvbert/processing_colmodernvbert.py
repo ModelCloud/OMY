@@ -18,11 +18,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
 from itertools import accumulate
 from typing import TYPE_CHECKING, Optional, Union
 
 import numpy as np
+import pcre as re
 import torch
 
 from ...feature_extraction_utils import BatchFeature

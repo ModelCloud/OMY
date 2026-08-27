@@ -14,8 +14,8 @@
 
 import argparse
 import glob
-import re
 
+import pcre as re
 import safetensors.torch
 import torch
 from huggingface_hub import snapshot_download

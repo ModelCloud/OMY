@@ -17,8 +17,8 @@ import argparse
 import gc
 import json
 import os
-import re
 
+import pcre as re
 import torch
 from huggingface_hub import hf_hub_download, split_torch_state_dict_into_shards
 

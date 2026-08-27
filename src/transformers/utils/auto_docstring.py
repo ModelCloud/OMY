@@ -22,7 +22,7 @@ from pathlib import Path
 from types import UnionType
 from typing import ClassVar, Union, get_args, get_origin
 
-import regex as re
+import pcre as re
 import typing_extensions
 
 from .doc import (

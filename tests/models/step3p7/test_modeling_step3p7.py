@@ -13,9 +13,10 @@
 # limitations under the License.
 """Testing suite for the PyTorch Step3p7 model."""
 
-import re
 import unittest
 from unittest.mock import patch
+
+import pcre as re
 
 from transformers import is_torch_available
 from transformers.conversion_mapping import get_model_conversion_mapping

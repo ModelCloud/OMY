@@ -18,7 +18,6 @@ import inspect
 import itertools
 import json
 import os
-import re
 import shutil
 import tempfile
 import unittest
@@ -27,6 +26,7 @@ from itertools import takewhile
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
+import pcre as re
 from parameterized import parameterized
 
 from transformers import (

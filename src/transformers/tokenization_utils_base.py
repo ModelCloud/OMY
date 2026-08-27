@@ -23,7 +23,6 @@ from __future__ import annotations
 import copy
 import json
 import os
-import re
 import warnings
 from collections import OrderedDict, UserDict
 from collections.abc import Callable, Collection, Mapping, Sequence, Sized
@@ -32,6 +31,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Generic, NamedTuple, Union, overload
 
 import numpy as np
+import pcre as re
 from huggingface_hub import is_offline_mode
 from packaging import version
 from typing_extensions import TypeVar

@@ -3,8 +3,8 @@ import gc
 import io
 import json
 import os
-import re
 
+import pcre as re
 import torch
 from tokenizers import AddedToken, processors
 from tqdm import tqdm

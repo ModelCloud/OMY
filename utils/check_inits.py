@@ -36,8 +36,9 @@ python utils/check_inits.py --fix_and_overwrite
 
 import argparse
 import difflib
-import re
 from pathlib import Path
+
+import pcre as re
 
 from transformers.utils.import_utils import define_import_structure
 

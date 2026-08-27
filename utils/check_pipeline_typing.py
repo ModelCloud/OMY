@@ -1,4 +1,4 @@
-import re
+import pcre as re
 
 from transformers.pipelines import SUPPORTED_TASKS, Pipeline
 

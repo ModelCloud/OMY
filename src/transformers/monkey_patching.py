@@ -12,10 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
 import sys
 import threading
 from contextlib import contextmanager
+
+import pcre as re
 
 from .utils import is_torch_available, logging
 from .utils.output_capturing import OutputRecorder

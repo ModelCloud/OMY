@@ -27,9 +27,9 @@ import argparse
 import glob
 import inspect
 import os
-import re
 import unittest
 
+import pcre as re
 from get_test_info import get_test_classes
 
 from tests.test_pipeline_mixin import pipeline_test_mapping

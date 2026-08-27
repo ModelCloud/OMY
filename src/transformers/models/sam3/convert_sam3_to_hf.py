@@ -22,7 +22,7 @@ import argparse
 import gc
 import os
 
-import regex as re
+import pcre as re
 import torch
 
 from transformers import CLIPTokenizerFast, Sam3Config, Sam3ImageProcessor, Sam3Model, Sam3Processor

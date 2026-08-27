@@ -3,13 +3,13 @@ import json
 import logging
 import os
 import pathlib
-import re
 import tempfile
 import time
 from datetime import datetime
 from queue import Queue
 from typing import Any
 
+import pcre as re
 import torch
 from datasets import Dataset
 from huggingface_hub import HfApi

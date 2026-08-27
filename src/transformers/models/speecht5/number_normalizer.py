@@ -13,7 +13,7 @@
 # limitations under the License.
 """Number Normalizer class for SpeechT5."""
 
-import re
+import pcre as re
 
 
 class EnglishNumberNormalizer:

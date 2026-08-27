@@ -16,9 +16,9 @@
 import argparse
 import json
 import os
-import re
 import shutil
 
+import pcre as re
 import torch
 
 from transformers import BioGptConfig, BioGptForCausalLM

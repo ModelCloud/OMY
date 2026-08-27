@@ -13,8 +13,8 @@
 # limitations under the License.
 import argparse
 import io
-import re
 
+import pcre as re
 import torch
 import yaml
 

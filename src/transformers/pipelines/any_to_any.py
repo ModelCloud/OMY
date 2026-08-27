@@ -13,10 +13,10 @@
 # limitations under the License.
 
 import enum
-import re
 from typing import Any, Union, overload
 
 import numpy as np
+import pcre as re
 
 from ..audio_utils import AudioInput
 from ..generation import GenerationConfig

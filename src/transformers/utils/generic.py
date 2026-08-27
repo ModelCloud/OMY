@@ -22,7 +22,6 @@ import inspect
 import json
 import os
 import random
-import re
 import time
 import warnings
 from collections import OrderedDict, UserDict
@@ -34,6 +33,7 @@ from functools import partial, wraps
 from typing import TYPE_CHECKING, Any, TypedDict, TypeVar
 
 import numpy as np
+import pcre as re
 
 from ..utils import logging
 from .import_utils import is_mlx_available, is_torch_available, is_torch_fx_proxy, resolve_internal_import

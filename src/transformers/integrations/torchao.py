@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
 import types
 
+import pcre as re
 import torch
 
 from transformers.utils import logging

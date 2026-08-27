@@ -14,10 +14,10 @@
 import argparse
 import json
 import os
-import re
 from io import BytesIO
 
 import httpx
+import pcre as re
 import torch
 from PIL import Image
 

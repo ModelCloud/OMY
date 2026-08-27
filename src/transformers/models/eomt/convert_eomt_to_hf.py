@@ -16,8 +16,8 @@ import argparse
 import gc
 import json
 import os
-import re
 
+import pcre as re
 import torch
 from huggingface_hub import snapshot_download
 

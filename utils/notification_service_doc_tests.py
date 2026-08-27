@@ -14,9 +14,9 @@
 
 import json
 import os
-import re
 import time
 
+import pcre as re
 from get_ci_error_statistics import get_jobs
 from slack_sdk import WebClient
 

@@ -1,6 +1,7 @@
 import ast
-import re
 from collections import defaultdict
+
+import pcre as re
 
 
 # Function to perform topological sorting

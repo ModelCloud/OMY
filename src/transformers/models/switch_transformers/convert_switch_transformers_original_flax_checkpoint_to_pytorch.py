@@ -15,11 +15,11 @@
 """Convert SwitchTransformersX checkpoints from the original repository to JAX/FLAX model."""
 
 import argparse
-import re
 
 import jax
 import jax.numpy as jnp
 import numpy as np
+import pcre as re
 from flax.traverse_util import flatten_dict, unflatten_dict
 from t5x import checkpoints
 
@@ -262,8 +262,6 @@ GIN_TO_CONFIG_MAPPING = {
 
 def convert_gin_to_config(gin_file, num_experts):
     # Convert a google style config to the hugging face format
-    import regex as re
-
     with open(gin_file, "r") as f:
         raw_gin = f.read()
 

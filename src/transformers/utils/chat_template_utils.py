@@ -14,7 +14,6 @@
 
 import inspect
 import json
-import re
 import types
 from collections.abc import Callable
 from contextlib import contextmanager
@@ -24,6 +23,7 @@ from functools import lru_cache
 from inspect import isfunction
 from typing import Any, Literal, Union, get_args, get_origin, get_type_hints, no_type_check
 
+import pcre as re
 from packaging import version
 
 from . import logging

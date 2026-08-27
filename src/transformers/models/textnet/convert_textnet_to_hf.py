@@ -15,11 +15,11 @@
 import argparse
 import json
 import logging
-import re
 from collections import OrderedDict
 from io import BytesIO
 
 import httpx
+import pcre as re
 import torch
 from huggingface_hub import hf_hub_download
 from PIL import Image

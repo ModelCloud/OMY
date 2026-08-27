@@ -22,7 +22,6 @@ import importlib.util
 import json
 import numbers
 import os
-import re
 import secrets
 import shutil
 import sys
@@ -35,6 +34,7 @@ from typing import TYPE_CHECKING, Any, Literal
 
 import numpy as np
 import packaging.version
+import pcre as re
 
 
 if os.getenv("WANDB_MODE") == "offline":

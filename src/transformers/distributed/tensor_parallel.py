@@ -14,7 +14,8 @@
 from __future__ import annotations
 
 import contextlib
-import re
+
+import pcre as re
 
 from ..utils import logging
 from ..utils.generic import GeneralInterface
