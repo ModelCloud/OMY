@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import json
-import re
 from typing import TYPE_CHECKING
+
+import pcre as re
 
 from .base import HfQuantizer
 from .quantizers_utils import get_module_from_name, should_convert_module

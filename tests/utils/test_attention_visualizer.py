@@ -14,8 +14,9 @@
 
 import builtins
 import io
-import re
 import unittest
+
+import pcre as re
 
 from transformers.testing_utils import require_torch
 from transformers.utils.attention_visualizer import AttentionMaskVisualizer

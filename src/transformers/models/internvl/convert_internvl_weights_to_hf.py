@@ -13,9 +13,9 @@
 import argparse
 import gc
 import os
-import re
 from typing import Literal
 
+import pcre as re
 import torch
 from einops import rearrange
 

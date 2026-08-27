@@ -13,10 +13,10 @@
 # limitations under the License.
 """PyTorch Cosmos3 Edge reasoner model."""
 
-import re
 from typing import Any
 
 import numpy as np
+import pcre as re
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

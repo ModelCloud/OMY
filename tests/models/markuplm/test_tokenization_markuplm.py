@@ -15,11 +15,11 @@
 import inspect
 import json
 import os
-import re
 import shutil
 import tempfile
 import unittest
 
+import pcre as re
 from parameterized import parameterized
 
 from transformers import (

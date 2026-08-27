@@ -15,10 +15,10 @@
 
 import argparse
 import os
-import re
 
 import mediapy
 import numpy as np
+import pcre as re
 import torch
 from huggingface_hub import hf_hub_download
 from safetensors.torch import load_file, save_file

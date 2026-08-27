@@ -14,8 +14,8 @@
 
 import argparse
 import json
-import re
 
+import pcre as re
 import safetensors
 import torch
 import torch.nn as nn

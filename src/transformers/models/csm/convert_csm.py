@@ -15,8 +15,8 @@
 import argparse
 import gc
 import os
-import re
 
+import pcre as re
 import torch
 from tokenizers.processors import TemplateProcessing
 

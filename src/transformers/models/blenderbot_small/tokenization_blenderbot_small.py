@@ -16,7 +16,7 @@
 import json
 import os
 
-import regex as re
+import pcre as re
 
 from ...tokenization_python import PreTrainedTokenizer
 from ...utils import logging

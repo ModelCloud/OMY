@@ -15,8 +15,8 @@
 import argparse
 import gc
 import os
-import re
 
+import pcre as re
 import safetensors.torch
 import sentencepiece
 import torch

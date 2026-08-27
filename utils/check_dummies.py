@@ -35,7 +35,8 @@ python utils/check_dummies.py --fix_and_overwrite
 
 import argparse
 import os
-import re
+
+import pcre as re
 
 
 CHECKER_CONFIG = {

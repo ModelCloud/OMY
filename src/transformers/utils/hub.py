@@ -18,7 +18,6 @@ Hub utilities: utilities related to download and cache models
 import errno
 import json
 import os
-import re
 import sys
 import tempfile
 from concurrent import futures
@@ -27,6 +26,7 @@ from typing import TypedDict
 from uuid import uuid4
 
 import httpx
+import pcre as re
 from huggingface_hub import (
     _CACHED_NO_EXIST,
     CommitOperationAdd,

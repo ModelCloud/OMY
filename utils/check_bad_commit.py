@@ -17,11 +17,11 @@ import argparse
 import copy
 import json
 import os
-import re
 import subprocess
 from collections import defaultdict
 
 import git
+import pcre as re
 from github_utils import get_github_json
 
 
@@ -292,8 +292,6 @@ def get_commit_info(commit, pr_number=None, github_token=None):
     if commit_info.get("parents") and len(commit_info["parents"]) > 1:
         commit_message = commit_info.get("commit", {}).get("message", "")
         # Parse message like "Merge 1ac46bed... into 5a67f0a7..."
-        import re
-
         match = re.match(r"^Merge ([a-f0-9]{40}) into ([a-f0-9]{40})", commit_message)
         if match:
             # Use the first SHA (the PR commit)

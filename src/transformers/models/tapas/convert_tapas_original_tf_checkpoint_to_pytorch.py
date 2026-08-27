@@ -41,9 +41,8 @@ def load_tf_weights_in_tapas(model, config, tf_checkpoint_path):
     - take into account additional token type embedding layers
     """
     try:
-        import re
-
         import numpy as np
+        import pcre as re
         import tensorflow as tf
     except ImportError:
         logger.error(

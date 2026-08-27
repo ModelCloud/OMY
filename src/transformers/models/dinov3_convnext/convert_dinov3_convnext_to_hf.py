@@ -18,10 +18,10 @@ URL: https://github.com/facebookresearch/dinov3/tree/main
 
 import argparse
 import os
-import re
 from io import BytesIO
 
 import httpx
+import pcre as re
 import torch
 from huggingface_hub import HfApi, hf_hub_download
 from PIL import Image

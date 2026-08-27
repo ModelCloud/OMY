@@ -13,8 +13,8 @@
 # limitations under the License.
 import argparse
 import os
-import re
 
+import pcre as re
 import torch
 from flax.traverse_util import flatten_dict
 from t5x import checkpoints

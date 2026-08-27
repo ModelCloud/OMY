@@ -25,11 +25,11 @@ import argparse
 import glob
 import json
 import os.path
-import re
 import tempfile
 from contextlib import contextmanager
 from pathlib import Path
 
+import pcre as re
 from git import Repo
 from huggingface_hub import HfApi
 from optimum_benchmark import Benchmark

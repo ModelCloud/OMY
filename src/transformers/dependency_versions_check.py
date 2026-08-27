@@ -25,7 +25,7 @@ from .utils.versions import require_version, require_version_core
 pkgs_to_check_at_runtime = [
     "python",
     "tqdm",
-    "regex",
+    "PyPcre",
     "packaging",
     "filelock",
     "numpy",

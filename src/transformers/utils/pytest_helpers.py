@@ -1,8 +1,9 @@
 import argparse
 import json
-import re
 from collections import Counter
 from pathlib import Path
+
+import pcre as re
 
 
 def _base_test_name(nodeid: str) -> str:

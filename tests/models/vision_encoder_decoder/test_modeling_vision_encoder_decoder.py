@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
 import tempfile
 import unittest
 from functools import cached_property
 
+import pcre as re
 from datasets import load_dataset
 from huggingface_hub import hf_hub_download
 from packaging import version

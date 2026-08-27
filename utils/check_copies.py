@@ -38,9 +38,10 @@ for a check that will fix all inconsistencies automatically (used by `make fix-r
 import argparse
 import glob
 import os
-import re
 import subprocess
 from collections import OrderedDict
+
+import pcre as re
 
 from transformers.utils import direct_transformers_import, logging
 

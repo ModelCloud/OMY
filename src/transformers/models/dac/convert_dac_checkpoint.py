@@ -13,9 +13,9 @@
 # limitations under the License.
 import argparse
 import fnmatch
-import re
 
 import numpy as np
+import pcre as re
 import torch
 import torch.nn as nn
 

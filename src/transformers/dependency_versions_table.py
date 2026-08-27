@@ -50,7 +50,7 @@ deps = {
     "pytest-xdist": "pytest-xdist",
     "pytest-order": "pytest-order",
     "python": "python>=3.10.0",
-    "regex": "regex>=2025.10.22",
+    "PyPcre": "PyPcre>=0.6.2",
     "rhoknp": "rhoknp>=1.1.0,<1.3.1",
     "rjieba": "rjieba",
     "rouge-score": "rouge-score!=0.0.7,!=0.0.8,!=0.1,!=0.1.1",

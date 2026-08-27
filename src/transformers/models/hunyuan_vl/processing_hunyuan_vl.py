@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import re
+import pcre as re
 
 from ...image_utils import ImageInput, make_flat_list_of_images
 from ...processing_utils import MultiModalData, ProcessingKwargs, ProcessorMixin, Unpack

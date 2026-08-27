@@ -29,11 +29,11 @@ from __future__ import annotations
 import functools
 import json
 import os
-import re
 import shutil
 from collections.abc import Callable
 from dataclasses import dataclass
 
+import pcre as re
 import torch
 
 from ..utils import logging

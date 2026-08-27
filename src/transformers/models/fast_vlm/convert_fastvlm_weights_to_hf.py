@@ -14,10 +14,10 @@
 import argparse
 import glob
 import os
-import re
 from io import BytesIO
 
 import httpx
+import pcre as re
 import torch
 from huggingface_hub import snapshot_download
 from PIL import Image

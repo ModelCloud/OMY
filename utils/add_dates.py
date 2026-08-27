@@ -1,11 +1,11 @@
 import argparse
 import os
-import re
 import subprocess
 from datetime import date, datetime
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
+import pcre as re
 from huggingface_hub import paper_info
 
 from transformers import logging

@@ -31,12 +31,12 @@ import functools
 import json
 import logging
 import os
-import re
 import sys
 from dataclasses import dataclass, field
 
 import datasets
 import evaluate
+import pcre as re
 import torch
 from datasets import DatasetDict, load_dataset
 

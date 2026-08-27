@@ -19,8 +19,8 @@
 # limitations under the License.
 
 import itertools
-import re
 
+import pcre as re
 from tokenizers import Tokenizer, decoders, normalizers, pre_tokenizers, processors
 from tokenizers.models import Unigram
 

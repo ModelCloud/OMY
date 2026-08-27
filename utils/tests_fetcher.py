@@ -53,10 +53,10 @@ import collections
 import glob
 import json
 import os
-import re
 from contextlib import contextmanager
 from pathlib import Path
 
+import pcre as re
 from git import Repo
 
 

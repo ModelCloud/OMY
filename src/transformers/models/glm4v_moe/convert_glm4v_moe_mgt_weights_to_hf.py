@@ -16,9 +16,9 @@ import argparse
 import json
 import os
 import pickle
-import re
 from pathlib import Path
 
+import pcre as re
 import torch
 from safetensors.torch import save_file
 

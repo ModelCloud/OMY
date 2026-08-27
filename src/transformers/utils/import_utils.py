@@ -22,7 +22,6 @@ import importlib.util
 import json
 import operator
 import os
-import re
 import shutil
 import subprocess
 import sys
@@ -36,6 +35,7 @@ from types import ModuleType
 from typing import Any
 
 import packaging.version
+import pcre as re
 from packaging import version
 
 from . import logging

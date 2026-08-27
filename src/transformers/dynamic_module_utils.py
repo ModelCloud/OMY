@@ -21,7 +21,6 @@ import importlib.metadata
 import importlib.util
 import keyword
 import os
-import re
 import shutil
 import signal
 import sys
@@ -30,6 +29,7 @@ from pathlib import Path
 from types import ModuleType
 from typing import Any
 
+import pcre as re
 from huggingface_hub import is_offline_mode, try_to_load_from_cache
 from packaging import version
 

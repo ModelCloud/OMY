@@ -36,9 +36,10 @@ python utils/custom_init_isort.py --check_only
 
 import argparse
 import os
-import re
 from collections.abc import Callable
 from typing import Any
+
+import pcre as re
 
 
 CHECKER_CONFIG = {

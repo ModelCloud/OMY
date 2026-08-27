@@ -31,8 +31,7 @@ logger = logging.get_logger(__name__)
 def load_tf_weights_in_gpt_neo(model, config, gpt_neo_checkpoint_path):
     """Load tf checkpoints in a pytorch model"""
     try:
-        import re
-
+        import pcre as re
         import tensorflow as tf
     except ImportError:
         logger.error(

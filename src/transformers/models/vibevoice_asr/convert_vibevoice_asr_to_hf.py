@@ -16,10 +16,10 @@ import argparse
 import gc
 import json
 import logging
-import re
 from pathlib import Path
 from typing import Any
 
+import pcre as re
 import torch
 from safetensors.torch import load_file
 

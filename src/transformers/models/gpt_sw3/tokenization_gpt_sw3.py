@@ -1,8 +1,9 @@
 """The tokenizer used by the GPT-SW3 models."""
 
-import re
 import unicodedata
 from typing import Any, Union
+
+import pcre as re
 
 from ...tokenization_utils_sentencepiece import SentencePieceBackend
 from ...utils import is_torch_available, logging

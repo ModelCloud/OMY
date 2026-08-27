@@ -32,13 +32,13 @@ from __future__ import annotations
 
 import argparse
 import importlib.util
-import re
 import subprocess
 import sys
 import tempfile
 import types
 from pathlib import Path
 
+import pcre as re
 import torch
 import torch.nn as nn
 from huggingface_hub import hf_hub_download

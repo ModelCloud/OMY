@@ -15,9 +15,10 @@
 Processor class for IDEFICS2.
 """
 
-import re
 from itertools import accumulate
 from typing import TYPE_CHECKING, Union
+
+import pcre as re
 
 from ...feature_extraction_utils import BatchFeature
 from ...image_utils import ImageInput, is_valid_image, load_image

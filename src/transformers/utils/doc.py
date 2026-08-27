@@ -17,11 +17,12 @@ Doc utilities: Utilities related to documentation
 
 import functools
 import inspect
-import re
 import textwrap
 import types
 from collections import OrderedDict
 from typing import cast
+
+import pcre as re
 
 
 def get_docstring_indentation_level(func):

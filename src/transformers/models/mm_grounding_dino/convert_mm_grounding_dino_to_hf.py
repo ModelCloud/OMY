@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import argparse
-import re
 from io import BytesIO
 
 import httpx
+import pcre as re
 import torch
 from PIL import Image
 

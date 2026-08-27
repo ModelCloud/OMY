@@ -19,11 +19,11 @@ URL: https://github.com/deepglint/unicom/tree/main
 import argparse
 import collections
 import os
-import re
 from io import BytesIO
 
 import httpx
 import numpy as np
+import pcre as re
 import torch
 from PIL import Image
 

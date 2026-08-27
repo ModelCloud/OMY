@@ -17,17 +17,17 @@ from __future__ import annotations
 
 import math
 import os
-import re
 import traceback
 from abc import ABC, abstractmethod
 from collections import defaultdict
 from collections.abc import Callable
 from concurrent.futures import Future, ThreadPoolExecutor
 from contextlib import contextmanager
-from copy import deepcopy
+from copy import copy, deepcopy
 from itertools import chain
 from typing import TYPE_CHECKING, Any
 
+import pcre as re
 import torch
 
 from .distributed.sharding_utils import DtensorShardOperation, _dtensor_from_local_like
@@ -853,6 +853,26 @@ class WeightTransform:
     def __repr__(self):
         return f"{self.__class__.__name__}(source_patterns={self.source_patterns}, target_patterns={self.target_patterns})"
 
+    def __deepcopy__(self, memo):
+        # `pcre.Pattern` (PCRE2) objects are not pickleable, so the default deepcopy fails.
+        # Copy the compiled regex with `copy.copy` and deep-copy everything else.
+        cls = self.__class__
+        result = cls.__new__(cls)
+        memo[id(self)] = result
+        for klass in cls.__mro__:
+            if klass is object:
+                continue
+            for slot in getattr(klass, "__slots__", ()):
+                if slot in ("__dict__", "__weakref__"):
+                    continue
+                value = getattr(self, slot)
+                if slot == "compiled_sources":
+                    value = copy(value) if value is not None else None
+                else:
+                    value = deepcopy(value, memo)
+                object.__setattr__(result, slot, value)
+        return result
+
     def __setattr__(self, name, value):
         if name in ("source_patterns", "target_patterns"):
             # We do not allow to re-set the patterns, as they are linked between each other and changing one
@@ -868,7 +888,7 @@ class WeightTransform:
         self.collected_tensors[source_pattern].append(future)
         self.layer_targets[target_key].add(source_key)
 
-    def _scoped_match(self, source_key: str) -> tuple[str | None, str, re.Match[str]] | None:
+    def _scoped_match(self, source_key: str) -> tuple[str | None, str, re.Match] | None:
         """
         Strip `scope_prefix` (if any) from `source_key`, then match `compiled_sources` against the
         remaining suffix.

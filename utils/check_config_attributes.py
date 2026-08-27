@@ -14,7 +14,8 @@
 
 import inspect
 import os
-import re
+
+import pcre as re
 
 from transformers.configuration_utils import PreTrainedConfig
 from transformers.utils import direct_transformers_import

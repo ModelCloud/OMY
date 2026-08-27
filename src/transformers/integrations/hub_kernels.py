@@ -15,13 +15,14 @@ import functools
 import importlib
 import inspect
 import os
-import re
 import sys
 from collections.abc import Callable
 from contextlib import contextmanager
 from pathlib import Path
 from types import ModuleType
 from typing import TYPE_CHECKING
+
+import pcre as re
 
 from ..conversion_mapping import get_checkpoint_conversion_mapping, register_checkpoint_conversion_mapping
 from ..monkey_patching import register_patch_mapping

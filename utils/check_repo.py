@@ -33,12 +33,13 @@ It has no auto-fix mode.
 import ast
 import functools
 import os
-import re
 import types
 import warnings
 from collections import OrderedDict
 from difflib import get_close_matches
 from pathlib import Path
+
+import pcre as re
 
 from transformers import is_torch_available
 from transformers.models.auto.auto_factory import get_values

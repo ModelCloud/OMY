@@ -31,10 +31,10 @@ python utils/update_metadata.py --check-only
 import argparse
 import collections
 import os
-import re
 import tempfile
 
 import pandas as pd
+import pcre as re
 from datasets import Dataset
 from huggingface_hub import hf_hub_download, upload_folder
 

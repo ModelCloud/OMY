@@ -30,9 +30,8 @@ logging.set_verbosity_info()
 def load_tf_weights_in_funnel(model, config, tf_checkpoint_path):
     """Load tf checkpoints in a pytorch model."""
     try:
-        import re
-
         import numpy as np
+        import pcre as re
         import tensorflow as tf
     except ImportError:
         logger.error(

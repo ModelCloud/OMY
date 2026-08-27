@@ -14,10 +14,10 @@
 
 import argparse
 import os
-import re
 import shutil
 
 import numpy as np
+import pcre as re
 import timesfm
 import torch
 from huggingface_hub import snapshot_download

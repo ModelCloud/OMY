@@ -31,12 +31,12 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from collections.abc import Iterable
 from pathlib import Path
 from typing import NamedTuple
 
+import pcre as re
 import requests
 import torch
 from accelerate import init_empty_weights

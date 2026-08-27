@@ -1,6 +1,6 @@
 import argparse
-import re
 
+import pcre as re
 import torch
 from safetensors.torch import load_file
 

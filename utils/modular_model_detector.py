@@ -102,12 +102,12 @@ import ast
 import json
 import logging
 import os
-import re
 from datetime import datetime
 from functools import cache
 from pathlib import Path
 
 import numpy as np
+import pcre as re
 import torch
 from huggingface_hub import HfApi, snapshot_download
 from huggingface_hub import logging as huggingface_hub_logging

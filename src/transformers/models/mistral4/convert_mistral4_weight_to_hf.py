@@ -14,11 +14,11 @@
 
 import argparse
 import json
-import re
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
+import pcre as re
 import torch
 from safetensors.torch import load_file
 

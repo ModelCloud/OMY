@@ -15,8 +15,8 @@ import argparse
 import gc
 import json
 import os
-import re
 
+import pcre as re
 import torch
 from safetensors.torch import load_file
 

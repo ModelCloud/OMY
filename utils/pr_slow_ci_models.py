@@ -29,10 +29,10 @@ python utils/pr_slow_ci_models.py
 import argparse
 import json
 import os.path
-import re
 import string
 from pathlib import Path
 
+import pcre as re
 from git import Repo
 
 

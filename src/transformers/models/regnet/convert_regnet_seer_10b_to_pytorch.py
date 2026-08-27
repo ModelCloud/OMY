@@ -18,13 +18,13 @@
 import argparse
 import json
 import os
-import re
 from collections import OrderedDict
 from dataclasses import dataclass, field
 from functools import partial
 from pathlib import Path
 from pprint import pprint
 
+import pcre as re
 import torch
 import torch.nn as nn
 from classy_vision.models.regnet import RegNet, RegNetParams

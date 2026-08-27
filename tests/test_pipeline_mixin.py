@@ -17,13 +17,13 @@ import inspect
 import json
 import os
 import random
-import re
 import unittest
 from dataclasses import fields, is_dataclass
 from pathlib import Path
 from textwrap import dedent
 from typing import get_args
 
+import pcre as re
 from huggingface_hub import (
     AudioClassificationInput,
     AutomaticSpeechRecognitionInput,

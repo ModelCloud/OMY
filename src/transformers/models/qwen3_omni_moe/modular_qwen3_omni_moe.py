@@ -15,10 +15,10 @@
 """PyTorch Qwen3Omni model (Audio, Image, Video)."""
 
 import math
-import re
 from dataclasses import dataclass
 
 import numpy as np
+import pcre as re
 import torch
 from huggingface_hub.dataclasses import strict
 from torch import nn

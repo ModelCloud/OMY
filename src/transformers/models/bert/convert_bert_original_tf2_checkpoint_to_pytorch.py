@@ -27,8 +27,8 @@ Note: This script is only working with an older version of the TensorFlow models
 
 import argparse
 import os
-import re
 
+import pcre as re
 import tensorflow as tf
 import torch
 

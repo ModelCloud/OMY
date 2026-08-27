@@ -13,10 +13,10 @@
 # limitations under the License.
 """Tokenization classes for CodeGen."""
 
-import re
 from typing import TYPE_CHECKING, Union
 
 import numpy as np
+import pcre as re
 from tokenizers import Tokenizer, decoders, pre_tokenizers, processors
 from tokenizers.models import BPE
 

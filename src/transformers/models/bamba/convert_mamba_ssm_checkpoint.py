@@ -16,9 +16,9 @@
 import argparse
 import json
 import os
-import re
 from os import path
 
+import pcre as re
 import torch
 from huggingface_hub import split_torch_state_dict_into_shards
 from safetensors.torch import save_file

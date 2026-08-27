@@ -38,8 +38,8 @@ Example:
 import argparse
 import copy
 import json
-import re
 
+import pcre as re
 import torch
 from safetensors.torch import load_file
 

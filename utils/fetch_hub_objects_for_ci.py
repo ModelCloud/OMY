@@ -16,10 +16,11 @@ This script downloads files from the HuggingFace Hub to be used for CI tests.
 """
 
 import os
-import re
 import shutil
 import time
 from pathlib import Path
+
+import pcre as re
 
 
 # Ensure we always download from the public HuggingFace Hub, not the CI staging endpoint.

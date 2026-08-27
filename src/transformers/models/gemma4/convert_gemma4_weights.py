@@ -2327,7 +2327,7 @@ def _verify_quant_bits(state_tree, module_quant_configs, config):
     load time. That implied bit width has to match the regex map; if it
     doesn't, the loader silently mis-decodes and inference produces garbage.
     """
-    import re
+    import pcre as re
 
     with torch.device("meta"):
         model = (

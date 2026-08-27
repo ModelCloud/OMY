@@ -12,11 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import math
-import re
 from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
+import pcre as re
 import torch.nn as nn
 import torch.nn.functional as F
 from huggingface_hub.dataclasses import strict

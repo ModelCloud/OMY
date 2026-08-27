@@ -19,9 +19,9 @@ URL: https://github.com/google-research/big_vision/tree/main
 import argparse
 import collections
 import os
-import re
 
 import numpy as np
+import pcre as re
 import torch
 from huggingface_hub import hf_hub_download
 from PIL import Image, ImageDraw

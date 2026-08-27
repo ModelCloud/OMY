@@ -23,7 +23,6 @@ push/tags/revision integration.
 import dataclasses
 import math
 import os
-import re
 import shutil
 import signal
 import subprocess
@@ -34,6 +33,7 @@ from pathlib import Path
 from typing import Any
 from unittest.mock import Mock, patch
 
+import pcre as re
 import safetensors
 import torch
 from huggingface_hub import ModelCard, create_branch, list_repo_commits, list_repo_files

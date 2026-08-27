@@ -16,9 +16,8 @@
 Processor class for Qwen2.5Omni.
 """
 
-import re
-
 import numpy as np
+import pcre as re
 
 from ...feature_extraction_utils import BatchFeature
 from ...image_utils import ImageInput

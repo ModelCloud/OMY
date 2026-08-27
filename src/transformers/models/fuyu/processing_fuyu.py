@@ -16,10 +16,10 @@ Image/Text processor class for GIT
 """
 
 import math
-import re
 from typing import Union
 
 import numpy as np
+import pcre as re
 
 from ...image_processing_utils import BatchFeature
 from ...image_utils import ImageInput, make_flat_list_of_images

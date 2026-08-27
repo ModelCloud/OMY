@@ -15,9 +15,9 @@
 import argparse
 import json
 import os
-import re
 
 import numpy as np
+import pcre as re
 import torch
 from decord import VideoReader
 from huggingface_hub import HfApi, hf_hub_download

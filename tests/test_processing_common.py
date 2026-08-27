@@ -279,7 +279,8 @@ class ProcessorTesterMixin:
         the config class, which is then used to find the appropriate component class.
         """
         import inspect
-        import re
+
+        import pcre as re
 
         from transformers.models.auto.configuration_auto import (
             CONFIG_MAPPING_NAMES,

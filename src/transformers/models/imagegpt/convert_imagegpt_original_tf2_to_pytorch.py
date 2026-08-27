@@ -31,8 +31,7 @@ def load_tf_weights_in_imagegpt(model, config, imagegpt_checkpoint_path):
     Load tf checkpoints in a pytorch model
     """
     try:
-        import re
-
+        import pcre as re
         import tensorflow as tf
     except ImportError:
         logger.error(

@@ -20,12 +20,12 @@ import copy
 import functools
 import inspect
 import os
-import re
 from collections import OrderedDict, defaultdict
 from collections.abc import Callable
 from contextlib import contextmanager, nullcontext
 from typing import TYPE_CHECKING
 
+import pcre as re
 from safetensors import safe_open
 from safetensors.torch import save_file
 

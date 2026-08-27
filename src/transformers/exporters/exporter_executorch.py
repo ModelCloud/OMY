@@ -40,9 +40,10 @@ from __future__ import annotations
 
 import math
 import operator
-import re
 from collections.abc import MutableMapping
 from typing import Any
+
+import pcre as re
 
 from ..utils import logging
 from ..utils.import_utils import is_executorch_available, is_torch_available

@@ -1361,9 +1361,9 @@ class TokenizersBackend(PreTrainedTokenizerBase):
             2) Remote models on the hub from official mistral models
                 >> Tags including `base_model:.*mistralai`
         """
-        import re
         from functools import lru_cache
 
+        import pcre as re
         from packaging import version
 
         from transformers.utils.hub import cached_file, hf_api

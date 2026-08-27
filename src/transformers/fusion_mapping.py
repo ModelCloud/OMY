@@ -18,10 +18,10 @@ See `docs/source/en/fusion_mapping.md` for the design overview and extension gui
 """
 
 import math
-import re
 from collections.abc import Mapping
 from typing import TYPE_CHECKING, Any
 
+import pcre as re
 import torch
 from torch import nn
 

@@ -14,8 +14,8 @@
 
 import argparse
 import gc
-import re
 
+import pcre as re
 import torch
 
 from transformers import (

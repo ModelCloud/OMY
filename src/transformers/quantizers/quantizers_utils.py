@@ -11,9 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import re
 from contextlib import contextmanager
 from typing import Any
+
+import pcre as re
 
 
 def get_module_from_name(module, tensor_name: str) -> tuple[Any, str]:

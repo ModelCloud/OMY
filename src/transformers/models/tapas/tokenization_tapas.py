@@ -19,13 +19,13 @@ import enum
 import itertools
 import math
 import os
-import re
 import unicodedata
 from collections.abc import Callable, Generator
 from dataclasses import dataclass
 from typing import Union
 
 import numpy as np
+import pcre as re
 
 from ...tokenization_python import PreTrainedTokenizer, Trie, _is_control, _is_punctuation, _is_whitespace
 from ...tokenization_utils_base import (

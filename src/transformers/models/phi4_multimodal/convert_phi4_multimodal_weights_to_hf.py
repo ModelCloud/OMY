@@ -14,8 +14,8 @@
 import argparse
 import json
 import os
-import re
 
+import pcre as re
 import torch
 from peft import LoraConfig
 from safetensors.torch import load_file, save_file

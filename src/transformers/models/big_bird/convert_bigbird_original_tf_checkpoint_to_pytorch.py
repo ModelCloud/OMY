@@ -92,9 +92,8 @@ def load_tf_weights_in_big_bird(model, tf_checkpoint_path, is_trivia_qa=False):
         return names, tf_weights
 
     try:
-        import re
-
         import numpy as np
+        import pcre as re
         import tensorflow as tf
     except ImportError:
         logger.error(

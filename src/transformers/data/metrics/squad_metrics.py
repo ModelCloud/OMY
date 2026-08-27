@@ -23,8 +23,9 @@ probability that a question is unanswerable.
 import collections
 import json
 import math
-import re
 import string
+
+import pcre as re
 
 from ...models.bert import BasicTokenizer
 from ...utils import logging

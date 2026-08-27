@@ -17,9 +17,9 @@ Utilities for working with package versions
 
 import importlib.metadata
 import operator
-import re
 import sys
 
+import pcre as re
 from packaging import version
 
 

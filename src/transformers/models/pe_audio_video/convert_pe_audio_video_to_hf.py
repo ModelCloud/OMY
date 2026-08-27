@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import gc
-import re
 
+import pcre as re
 import safetensors.torch
 
 from transformers.models.pe_audio_video.modeling_pe_audio_video import PeAudioVideoConfig, PeAudioVideoModel

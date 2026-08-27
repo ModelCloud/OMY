@@ -15,10 +15,10 @@
 
 import argparse
 import json
-import re
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+import pcre as re
 import torch
 import yaml
 

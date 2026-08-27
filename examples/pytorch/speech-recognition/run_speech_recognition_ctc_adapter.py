@@ -31,13 +31,13 @@ import functools
 import json
 import logging
 import os
-import re
 import sys
 from dataclasses import dataclass, field
 
 import datasets
 import evaluate
 import numpy as np
+import pcre as re
 import torch
 from datasets import DatasetDict, load_dataset
 from safetensors.torch import save_file as safe_save_file

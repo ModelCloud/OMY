@@ -18,11 +18,11 @@ URL: https://github.com/facebookresearch/segment-anything-2.
 """
 
 import argparse
-import re
 from io import BytesIO
 
 import httpx
 import numpy as np
+import pcre as re
 import torch
 from huggingface_hub import hf_hub_download
 from PIL import Image

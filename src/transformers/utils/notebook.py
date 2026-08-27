@@ -13,11 +13,11 @@
 # limitations under the License.
 
 import os
-import re
 import time
 from typing import Optional, TypeVar
 
 import IPython.display as disp
+import pcre as re
 
 from ..trainer_callback import TrainerCallback
 from ..trainer_utils import IntervalStrategy, has_length

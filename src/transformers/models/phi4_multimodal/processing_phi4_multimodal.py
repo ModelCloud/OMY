@@ -16,7 +16,7 @@
 Processor class for Phi4Multimodal
 """
 
-import re
+import pcre as re
 
 from ...audio_utils import AudioInput
 from ...image_processing_utils import BatchFeature

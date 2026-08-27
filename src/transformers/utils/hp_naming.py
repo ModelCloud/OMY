@@ -13,7 +13,8 @@
 # limitations under the License.
 
 import copy
-import re
+
+import pcre as re
 
 
 class TrialShortNamer:

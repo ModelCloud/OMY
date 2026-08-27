@@ -18,7 +18,6 @@ import functools
 import inspect
 import json
 import os
-import re
 import sys
 import warnings
 from abc import abstractmethod
@@ -32,6 +31,7 @@ from threading import Thread
 from typing import TYPE_CHECKING, Any, TypeVar, get_type_hints, overload
 from zipfile import is_zipfile
 
+import pcre as re
 import torch
 from huggingface_hub import is_offline_mode, split_torch_state_dict_into_shards
 from packaging import version
@@ -2005,7 +2005,7 @@ class PreTrainedModel(
         except (OSError, TypeError):
             return False
         # Heuristic: if we find an `*Attention*(nn.Module)` class, check whether the interface is used
-        if re.search(r"^class \w*Attention\w*\(nn\.Module\):", code, re.MULTILINE):
+        if re.search(r"^class \w*Attention\w*\(nn\.Module\):", code, re.Flag.MULTILINE):
             can_set = "ALL_ATTENTION_FUNCTIONS.get_interface(" in code
         # If no attention layer, assume `True`. Most probably a multimodal model or inherits from existing models
         else:

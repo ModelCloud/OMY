@@ -15,7 +15,6 @@ import asyncio
 import json
 import os
 import platform
-import re
 import string
 import time
 from collections.abc import AsyncIterator, Awaitable
@@ -23,6 +22,7 @@ from typing import Annotated, Any
 from urllib.parse import urljoin, urlparse, urlunparse
 
 import httpx
+import pcre as re
 import requests
 import typer
 import yaml

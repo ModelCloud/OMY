@@ -43,10 +43,10 @@ or use `make post-release`.
 
 import argparse
 import os
-import re
 from pathlib import Path
 
 import packaging.version
+import pcre as re
 
 
 # All paths are defined with the intent that this script should be run from the root of the repo.

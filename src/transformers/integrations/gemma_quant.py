@@ -200,7 +200,7 @@ def replace_with_quant_layers(
     `nn.Embedding` modules are only replaced when `quantize_embeddings` is True.
     Modules whose name matches an entry in `modules_to_not_convert` are skipped.
     """
-    import re
+    import pcre as re
 
     from ..quantizers.quantizers_utils import should_convert_module
 

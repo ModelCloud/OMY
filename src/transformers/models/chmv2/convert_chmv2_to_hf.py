@@ -30,7 +30,7 @@ Or with a DINOv3 backbone from HuggingFace:
 import argparse
 import os
 
-import regex as re
+import pcre as re
 import torch
 from PIL import Image
 

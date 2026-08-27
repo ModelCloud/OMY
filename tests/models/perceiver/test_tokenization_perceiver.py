@@ -12,11 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
 import shutil
 import tempfile
 import unittest
 from functools import cached_property
+
+import pcre as re
 
 from transformers import BatchEncoding, PerceiverTokenizer
 

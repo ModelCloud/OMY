@@ -13,9 +13,9 @@
 # limitations under the License.
 
 import json
-import re
 
 import numpy as np
+import pcre as re
 
 from ...audio_utils import AudioInput, make_list_of_audio_chat_template
 from ...feature_extraction_utils import BatchFeature

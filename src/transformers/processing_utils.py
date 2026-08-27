@@ -21,7 +21,6 @@ import functools
 import inspect
 import json
 import os
-import re
 import sys
 import typing
 from collections.abc import Callable
@@ -30,6 +29,7 @@ from pathlib import Path
 from typing import Annotated, Any, Literal, TypedDict, TypeVar, Union
 
 import numpy as np
+import pcre as re
 import typing_extensions
 from huggingface_hub import is_offline_mode
 from huggingface_hub.dataclasses import validate_typed_dict

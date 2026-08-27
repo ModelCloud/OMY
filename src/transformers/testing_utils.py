@@ -25,7 +25,6 @@ import json
 import logging
 import multiprocessing
 import os
-import re
 import shlex
 import shutil
 import subprocess
@@ -48,6 +47,7 @@ from unittest import mock
 from unittest.mock import patch
 
 import httpx
+import pcre as re
 from huggingface_hub import create_repo, delete_repo
 from packaging import version
 

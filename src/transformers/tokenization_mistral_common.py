@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import os
-import re
 import shutil
 from collections.abc import Callable, Sequence
 from enum import Enum
@@ -20,6 +19,7 @@ from pathlib import Path
 from typing import Any, Literal, Union, overload
 
 import numpy as np
+import pcre as re
 
 from transformers.audio_utils import load_audio_as
 from transformers.image_utils import get_image_size

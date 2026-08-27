@@ -12,9 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re
 from itertools import islice
 from pathlib import Path
+
+import pcre as re
 
 from ...audio_utils import AudioInput, make_list_of_audio
 from ...feature_extraction_utils import BatchFeature

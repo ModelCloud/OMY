@@ -15,8 +15,9 @@
 """Tokenization classes for PhoBERT"""
 
 import os
-import re
 from shutil import copyfile
+
+import pcre as re
 
 from ...tokenization_python import PreTrainedTokenizer
 from ...utils import logging

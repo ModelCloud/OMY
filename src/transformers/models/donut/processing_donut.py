@@ -15,7 +15,7 @@
 Processor class for Donut.
 """
 
-import re
+import pcre as re
 
 from ...image_utils import ImageInput
 from ...processing_utils import ProcessingKwargs, ProcessorMixin, Unpack

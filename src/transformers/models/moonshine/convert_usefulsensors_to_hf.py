@@ -13,10 +13,10 @@
 # limitations under the License.
 
 import argparse
-import re
 
 import h5py
 import numpy as np
+import pcre as re
 import torch
 from huggingface_hub import hf_hub_download
 

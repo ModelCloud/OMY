@@ -15,11 +15,11 @@
 
 import argparse
 import json
-import re
 import shutil
 from collections import defaultdict
 from pathlib import Path
 
+import pcre as re
 import torch
 from safetensors import safe_open
 from safetensors.torch import save_file

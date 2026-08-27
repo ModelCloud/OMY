@@ -29,9 +29,9 @@ The multilingual differences handled here are:
 import argparse
 import gc
 import os
-import re
 import tarfile
 
+import pcre as re
 import torch
 import yaml
 from tokenizers import AddedToken

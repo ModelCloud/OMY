@@ -1,5 +1,5 @@
 import argparse
-import re
+import pcre as re
 
 
 def parse_pytest_output(file_path):

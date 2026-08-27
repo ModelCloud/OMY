@@ -14,10 +14,10 @@
 from __future__ import annotations
 
 import os
-import re
 from functools import partial
 from typing import TYPE_CHECKING
 
+import pcre as re
 import torch
 import torch.nn as nn
 from safetensors import safe_open
