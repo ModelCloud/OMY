@@ -14,24 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+<h1 align="center">OMY (Open Model Yard)</h1>
+
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://huggingface.co/datasets/huggingface/documentation-images/raw/main/transformers-logo-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://huggingface.co/datasets/huggingface/documentation-images/raw/main/transformers-logo-light.svg">
-    <img alt="Hugging Face Transformers Library" src="https://huggingface.co/datasets/huggingface/documentation-images/raw/main/transformers-logo-light.svg" width="352" height="59" style="max-width: 100%;">
-  </picture>
-  <br/>
-  <br/>
+    State-of-the-art pretrained models for inference and training
 </p>
 
 <p align="center">
-    <a href="https://huggingface.com/models"><img alt="Checkpoints on Hub" src="https://img.shields.io/endpoint?url=https://huggingface.co/api/shields/models&color=brightgreen"></a>
-    <a href="https://circleci.com/gh/huggingface/transformers"><img alt="Build" src="https://img.shields.io/circleci/build/github/huggingface/transformers/main"></a>
-    <a href="https://github.com/huggingface/transformers/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/huggingface/transformers.svg?color=blue"></a>
-    <a href="https://huggingface.co/docs/transformers/index"><img alt="Documentation" src="https://img.shields.io/website/http/huggingface.co/docs/transformers/index.svg?down_color=red&down_message=offline&up_message=online"></a>
-    <a href="https://github.com/huggingface/transformers/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/huggingface/transformers.svg"></a>
-    <a href="https://github.com/huggingface/transformers/blob/main/CODE_OF_CONDUCT.md"><img alt="Contributor Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg"></a>
-    <a href="https://zenodo.org/badge/latestdoi/155220641"><img src="https://zenodo.org/badge/155220641.svg" alt="DOI"></a>
+    <a href="https://github.com/ModelCloud/OMY/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/ModelCloud/OMY.svg?color=blue"></a>
+    <a href="https://github.com/ModelCloud/OMY/blob/main/CODE_OF_CONDUCT.md"><img alt="Contributor Covenant" src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg"></a>
 </p>
 
 <h4 align="center">
@@ -59,15 +50,7 @@ limitations under the License.
     </p>
 </h4>
 
-<h3 align="center">
-    <p>State-of-the-art pretrained models for inference and training</p>
-</h3>
-
-<h3 align="center">
-    <img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/transformers_as_a_model_definition.png"/>
-</h3>
-
-Transformers acts as the model-definition framework for state-of-the-art machine learning with text, computer
+OMY acts as the model-definition framework for state-of-the-art machine learning with text, computer
 vision, audio, video, and multimodal models, for both inference and training.
 
 It centralizes the model definition so that this definition is agreed upon across the ecosystem. `transformers` is the
@@ -78,13 +61,18 @@ and adjacent modeling libraries (llama.cpp, mlx, ...) which leverage the model d
 We pledge to help support new state-of-the-art models and democratize their usage by having their model definition be
 simple, customizable, and efficient.
 
-There are over 1M+ Transformers [model checkpoints](https://huggingface.co/models?library=transformers&sort=trending) on the [Hugging Face Hub](https://huggingface.co/models) you can use.
+There are over 1M+ OMY-compatible model checkpoints on the [Hub](https://huggingface.co/models) you can use.
 
-Explore the [Hub](https://huggingface.co/) today to find a model and use Transformers to help you get started right away.
+Explore the [Hub](https://huggingface.co/) today to find a model and use OMY to help you get started right away.
+
+## About OMY
+
+> [!NOTE]
+> **OMY (Open Model Yard)** is created to ensure the continued development of the former Transformers project adheres to a true open source movement — open to all architectures, platforms, and both public and private companies.
 
 ## Installation
 
-Transformers works with Python 3.10+, and [PyTorch](https://pytorch.org/get-started/locally/) 2.5+.
+OMY works with Python 3.10+, and [PyTorch](https://pytorch.org/get-started/locally/) 2.5+.
 
 Create and activate a virtual environment with [venv](https://docs.python.org/3/library/venv.html) or [uv](https://docs.astral.sh/uv/), a fast Rust-based Python package and project manager.
 
@@ -97,21 +85,21 @@ uv venv .my-env
 source .my-env/bin/activate
 ```
 
-Install Transformers in your virtual environment.
+Install OMY in your virtual environment.
 
 ```py
 # pip
-pip install "transformers[torch]"
+pip install "omy[torch]"
 
 # uv
-uv pip install "transformers[torch]"
+uv pip install "omy[torch]"
 ```
 
-Install Transformers from source if you want the latest changes in the library or are interested in contributing. However, the *latest* version may not be stable. Feel free to open an [issue](https://github.com/huggingface/transformers/issues) if you encounter an error.
+Install OMY from source if you want the latest changes in the library or are interested in contributing. However, the *latest* version may not be stable. Feel free to open an [issue](https://github.com/ModelCloud/OMY/issues) if you encounter an error.
 
 ```shell
-git clone https://github.com/huggingface/transformers.git
-cd transformers
+git clone https://github.com/ModelCloud/OMY.git
+cd OMY
 
 # pip
 pip install '.[torch]'
@@ -122,7 +110,7 @@ uv pip install '.[torch]'
 
 ## Quickstart
 
-Get started with Transformers right away with the [Pipeline](https://huggingface.co/docs/transformers/pipeline_tutorial) API. The `Pipeline` is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.
+Get started with OMY right away with the `Pipeline` API. The `Pipeline` is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.
 
 Instantiate a pipeline and specify model to use for text generation. The model is downloaded and cached so you can easily reuse it again. Finally, pass some text to prompt the model.
 
@@ -137,7 +125,7 @@ pipeline("the secret to baking a really good cake is ")
 To chat with a model, the usage pattern is the same. The only difference is you need to construct a chat history (the input to `Pipeline`) between you and the system.
 
 > [!TIP]
-> You can also chat with a model directly from the command line, as long as [`transformers serve` is running](https://huggingface.co/docs/transformers/main/en/serving).
+> You can also chat with a model directly from the command line, as long as `transformers serve` is running.
 > ```shell
 > transformers chat Qwen/Qwen2.5-0.5B-Instruct
 > ```
@@ -214,7 +202,7 @@ pipeline(
 
 </details>
 
-## Why should I use Transformers?
+## Why should I use OMY?
 
 1. Easy-to-use state-of-the-art models:
     - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks.
@@ -237,25 +225,22 @@ pipeline(
     - Model internals are exposed as consistently as possible.
     - Model files can be used independently of the library for quick experiments.
 
-<a target="_blank" href="https://huggingface.co/enterprise">
-    <img alt="Hugging Face Enterprise Hub" src="https://github.com/user-attachments/assets/247fb16d-d251-4583-96c4-d3d76dda4925">
-</a><br>
 
-## When shouldn't I use Transformers?
+## When shouldn't I use OMY?
 
 - This library is not a modular toolbox of building blocks for neural nets. The code in the model files is not refactored with additional abstractions on purpose, so that researchers can quickly iterate on each of the models without diving into additional abstractions/files.
-- The training API is optimized to work with PyTorch models provided by Transformers. For generic machine learning loops, you should use another library like [Accelerate](https://huggingface.co/docs/accelerate).
-- The [example scripts](https://github.com/huggingface/transformers/tree/main/examples) are only *examples*. They may not necessarily work out-of-the-box on your specific use case and you'll need to adapt the code for it to work.
+- The training API is optimized to work with PyTorch models provided by OMY. For generic machine learning loops, you should use another library like [Accelerate](https://huggingface.co/docs/accelerate).
+- The [example scripts](https://github.com/ModelCloud/OMY/tree/main/examples) are only *examples*. They may not necessarily work out-of-the-box on your specific use case and you'll need to adapt the code for it to work.
 
-## 100 projects using Transformers
+## 100 projects using OMY
 
-Transformers is more than a toolkit to use pretrained models, it's a community of projects built around it and the
-Hugging Face Hub. We want Transformers to enable developers, researchers, students, professors, engineers, and anyone
+OMY is more than a toolkit to use pretrained models, it's a community of projects built around it and the
+broader model ecosystem. We want OMY to enable developers, researchers, students, professors, engineers, and anyone
 else to build their dream projects.
 
-In order to celebrate Transformers 100,000 stars, we wanted to put the spotlight on the
+In order to celebrate the OMY community, we wanted to put the spotlight on the
 community with the [awesome-transformers](./awesome-transformers.md) page which lists 100
-incredible projects built with Transformers.
+incredible projects built with OMY.
 
 If you own or use a project that you believe should be part of the list, please open a PR to add it!
 
@@ -269,7 +254,7 @@ Expand each modality below to see a few example models for various use cases.
 <summary>Audio</summary>
 
 - Audio classification with [CLAP](https://huggingface.co/laion/clap-htsat-fused)
-- Automatic speech recognition with [Parakeet](https://huggingface.co/nvidia/parakeet-ctc-1.1b#transcribing-using-transformers-%F0%9F%A4%97), [Whisper](https://huggingface.co/openai/whisper-large-v3-turbo), [GLM-ASR](https://huggingface.co/zai-org/GLM-ASR-Nano-2512) and [Moonshine-Streaming](https://huggingface.co/UsefulSensors/moonshine-streaming-medium)
+- Automatic speech recognition with [Parakeet](https://huggingface.co/nvidia/parakeet-ctc-1.1b), [Whisper](https://huggingface.co/openai/whisper-large-v3-turbo), [GLM-ASR](https://huggingface.co/zai-org/GLM-ASR-Nano-2512) and [Moonshine-Streaming](https://huggingface.co/UsefulSensors/moonshine-streaming-medium)
 - Keyword spotting with [Wav2Vec2](https://huggingface.co/superb/wav2vec2-base-superb-ks)
 - Speech to speech generation with [Moshi](https://huggingface.co/kyutai/moshiko-pytorch-bf16)
 - Text to audio with [MusicGen](https://huggingface.co/facebook/musicgen-large)
@@ -323,7 +308,7 @@ Expand each modality below to see a few example models for various use cases.
 
 ## Citation
 
-We now have a [paper](https://aclanthology.org/2020.emnlp-demos.6/) you can cite for the 🤗 Transformers library:
+We now have a [paper](https://aclanthology.org/2020.emnlp-demos.6/) you can cite for the original 🤗 Transformers library:
 ```bibtex
 @inproceedings{wolf-etal-2020-transformers,
     title = "Transformers: State-of-the-Art Natural Language Processing",

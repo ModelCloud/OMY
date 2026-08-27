@@ -323,16 +323,16 @@ if __name__ == "__main__":
         python_classifiers.append(f"Programming Language :: Python :: 3.{minor}")
 
     setup(
-        name="transformers",
+        name="omy",
         version="5.16.0.dev0",  # expected format is one of x.y.z.dev0, or x.y.z.rc1 or x.y.z (no to dashes, yes to dots)
-        author="The Hugging Face team (past and future) with the help of all our contributors (https://github.com/huggingface/transformers/graphs/contributors)",
-        author_email="transformers@huggingface.co",
-        description="Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
+        author="ModelCloud",
+        author_email="qubitium@modelcloud.ai",
+        description="OMY (Open Model Yard): the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.",
         long_description=open("README.md", "r", encoding="utf-8").read(),
         long_description_content_type="text/markdown",
-        keywords="machine-learning nlp python pytorch transformer llm vlm deep-learning inference training model-hub pretrained-models llama gemma qwen",
+        keywords="machine-learning nlp python pytorch transformer llm vlm deep-learning inference training model-hub pretrained-models llama gemma qwen omy open-model-yard",
         license="Apache 2.0 License",
-        url="https://github.com/huggingface/transformers",
+        url="https://github.com/ModelCloud/OMY",
         package_dir={"": "src"},
         packages=find_packages("src"),
         include_package_data=True,
