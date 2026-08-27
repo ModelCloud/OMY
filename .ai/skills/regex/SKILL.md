@@ -31,6 +31,16 @@ Do **not** use `import re` (stdlib) or `import regex` (third-party).
 - `pcre.split`, `pcre.sub`, `pcre.subn`, `pcre.escape`, `pcre.template`
 - `pcre.error`, `pcre.I`, `pcre.M`, `pcre.S`, `pcre.X`, `pcre.VERBOSE`, `pcre.UNICODE`, and other flag aliases
 
+## Type-checker friendly flags
+
+At runtime `pcre` exposes stdlib-style flag aliases (e.g. `re.DOTALL`, `re.IGNORECASE`, `re.VERBOSE`, `re.MULTILINE`).
+For the static `ty` checker, refer to constants through `pcre.Flag`:
+
+- `re.DOTALL` / `re.S` → `re.Flag.DOTALL`
+- `re.MULTILINE` / `re.M` → `re.Flag.MULTILINE`
+- `re.IGNORECASE` / `re.I` → `re.Flag.CASELESS`
+- `re.VERBOSE` / `re.X` → `re.Flag.EXTENDED`
+
 ## Important implementation differences
 
 - `pcre.Pattern` and `pcre.Match` are C extension classes and are **not generic**.
@@ -44,6 +54,6 @@ Do **not** use `import re` (stdlib) or `import regex` (third-party).
 ```python
 import pcre as re
 
-pattern = re.compile(r"\d+", re.IGNORECASE)
+pattern = re.compile(r"\d+", re.Flag.CASELESS)
 match = pattern.search("abc 123")
 ```
