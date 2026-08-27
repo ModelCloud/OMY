@@ -2005,7 +2005,7 @@ class PreTrainedModel(
         except (OSError, TypeError):
             return False
         # Heuristic: if we find an `*Attention*(nn.Module)` class, check whether the interface is used
-        if re.search(r"^class \w*Attention\w*\(nn\.Module\):", code, re.MULTILINE):
+        if re.search(r"^class \w*Attention\w*\(nn\.Module\):", code, re.Flag.MULTILINE):
             can_set = "ALL_ATTENTION_FUNCTIONS.get_interface(" in code
         # If no attention layer, assume `True`. Most probably a multimodal model or inherits from existing models
         else:

@@ -94,12 +94,12 @@ _re_checkpoint = re.compile(r"\[(.+?)\]\((https://huggingface\.co/.+?)\)")
 _re_example_or_return = re.compile(r"(?m)^([ \t]*)(?=Example|Return|```)")
 _re_return = re.compile(r"(?m)^([ \t]*)(?=Return)")
 _re_example = re.compile(r"(?m)^([ \t]*)(?=Example|```)")
-_re_args_section = re.compile(r"(?:Args:)(\n.*)?(\n)?$", re.DOTALL)
+_re_args_section = re.compile(r"(?:Args:)(\n.*)?(\n)?$", re.Flag.DOTALL)
 _re_shape = re.compile(r"(of shape\s*(?:`.*?`|\(.*?\)))")
 _re_default = re.compile(r"(defaults to \s*[^)]*)")
 _re_param = re.compile(
     r"^\s{0,0}(\w+)\s*\(\s*([^, \)]*)(\s*.*?)\s*\)\s*:\s*((?:(?!\n^\s{0,0}\w+\s*\().)*)",
-    re.DOTALL | re.MULTILINE,
+    re.Flag.DOTALL | re.Flag.MULTILINE,
 )
 _re_forward_ref = re.compile(r"ForwardRef\('([\w.]+)'\)")
 _re_optional = re.compile(r"Optional\[(.*?)\]")
@@ -2779,7 +2779,7 @@ def parse_docstring(docstring, max_indent_level=0, return_intro=False):
             param_pattern = re.compile(
                 # |--- Group 1 ---|| Group 2 ||- Group 3 -||---------- Group 4 ----------|
                 rf"^\s{{0,{max_indent_level}}}(\w+)\s*\(\s*([^, \)]*)(\s*.*?)\s*\)\s*:\s*((?:(?!\n^\s{{0,{max_indent_level}}}\w+\s*\().)*)",
-                re.DOTALL | re.MULTILINE,
+                re.Flag.DOTALL | re.Flag.MULTILINE,
             )
         for match in param_pattern.finditer(args_section):
             param_name = match.group(1)

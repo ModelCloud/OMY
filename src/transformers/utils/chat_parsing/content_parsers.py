@@ -67,7 +67,7 @@ def _json(text: str, args: dict) -> Any:
             captured.append(m.group(1))
             return f"{_LAX_OPEN}{len(captured) - 1}{_LAX_CLOSE}"
 
-        working = re.sub(pattern, _capture, working, flags=re.DOTALL)
+        working = re.sub(pattern, _capture, working, flags=re.Flag.DOTALL)
 
     if unquoted_keys:
         working = re.sub(r"(?<=[{,])(\w+):", r'"\1":', working)
@@ -105,7 +105,7 @@ def _xml_inline(text: str, args: dict) -> dict:
     merge = args.get("merge_duplicates", False)
 
     out: dict[str, Any] = {}
-    for m in re.finditer(tag_pattern, text, flags=re.DOTALL):
+    for m in re.finditer(tag_pattern, text, flags=re.Flag.DOTALL):
         groups = m.groupdict()
         key = groups.get("key")
         if key is None:

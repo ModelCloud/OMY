@@ -110,10 +110,10 @@ def _compile_anchor(scope: str, field: dict, literal_key: str, pattern_key: str)
         ordered = sorted(literals, key=len, reverse=True)
         can_extend = any(a != b and a.startswith(b) for a in literals for b in literals)
         pattern = "|".join(re.escape(s) for s in ordered)
-        return re.compile(pattern, re.DOTALL), literals, can_extend
+        return re.compile(pattern, re.Flag.DOTALL), literals, can_extend
     if pattern_key in field:
         try:
-            return re.compile(field[pattern_key], re.DOTALL), None, False
+            return re.compile(field[pattern_key], re.Flag.DOTALL), None, False
         except re.error as e:
             raise ValueError(f"{scope}: invalid {pattern_key} regex: {e}") from e
     return None, None, False

@@ -52,9 +52,9 @@ ChatType = list[dict[str, Any]]
 
 BASIC_TYPES = (int, float, str, bool, Any, type(None), ...)
 # Extracts the initial segment of the docstring, containing the function description
-description_re = re.compile(r"^(.*?)[\n\s]*(Args:|Returns:|Raises:|\Z)", re.DOTALL)
+description_re = re.compile(r"^(.*?)[\n\s]*(Args:|Returns:|Raises:|\Z)", re.Flag.DOTALL)
 # Extracts the Args: block from the docstring
-args_re = re.compile(r"\n\s*Args:\n\s*(.*?)[\n\s]*(Returns:|Raises:|\Z)", re.DOTALL)
+args_re = re.compile(r"\n\s*Args:\n\s*(.*?)[\n\s]*(Returns:|Raises:|\Z)", re.Flag.DOTALL)
 # Splits the Args: block into individual arguments
 args_split_re = re.compile(
     r"""
@@ -63,10 +63,10 @@ args_split_re = re.compile(
 (.*?)\s*  # Capture the argument description, which can span multiple lines, and strip trailing spacing
 (?=\n\s*\w+:|\Z)  # Stop when you hit the next argument or the end of the block
 """,
-    re.DOTALL | re.VERBOSE,
+    re.Flag.DOTALL | re.Flag.EXTENDED,
 )
 # Extracts the Returns: block from the docstring, if present. Note that most chat templates ignore the return type/doc!
-returns_re = re.compile(r"\n\s*Returns:\n\s*(.*?)[\n\s]*(Raises:|\Z)", re.DOTALL)
+returns_re = re.compile(r"\n\s*Returns:\n\s*(.*?)[\n\s]*(Raises:|\Z)", re.Flag.DOTALL)
 
 
 class TypeHintParsingException(Exception):
@@ -369,7 +369,7 @@ def get_json_schema(func: Callable) -> dict:
                 f"Cannot generate JSON schema for {func_name} because the docstring has no description for the argument '{arg}'"
             )
         desc = param_descriptions[arg]
-        enum_choices = re.search(r"\(choices:\s*(.*?)\)\s*$", desc, flags=re.IGNORECASE)
+        enum_choices = re.search(r"\(choices:\s*(.*?)\)\s*$", desc, flags=re.Flag.CASELESS)
         if enum_choices:
             schema["enum"] = [c.strip() if isinstance(c, str) else c for c in json.loads(enum_choices.group(1))]
             desc = enum_choices.string[: enum_choices.start()].strip()

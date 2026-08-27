@@ -234,11 +234,11 @@ def add_model_to_auto_mappings(
                 mapping_name = _AUTO_MAPPING_NAMES[filename]
                 filename = "auto_mappings.py"  # use the unified mapping filename to write content!
                 block_match = re.search(
-                    rf"[^\w_]{mapping_name}\s*=\s*OrderedDict\(\s*\[(.*?)\]\s*\)", autofile, re.DOTALL
+                    rf"[^\w_]{mapping_name}\s*=\s*OrderedDict\(\s*\[(.*?)\]\s*\)", autofile, re.Flag.DOTALL
                 )
                 block = block_match.group(1)  # type: ignore
                 matching_lines = re.findall(
-                    rf'( {{8,12}}\(\s*"{old_lowercase_name}",.*?\),\n)(?: {{4,12}}\(|\])', block, re.DOTALL
+                    rf'( {{8,12}}\(\s*"{old_lowercase_name}",.*?\),\n)(?: {{4,12}}\(|\])', block, re.Flag.DOTALL
                 )
             else:
                 # These auto mappings are filled-in manually (tokenization and modeling files)
@@ -246,7 +246,7 @@ def add_model_to_auto_mappings(
                 file = (repo_path / "src" / "transformers" / "models" / "auto" / filename).read_text()
                 # The regex has to be a bit complex like this as the tokenizer mapping has new lines everywhere
                 matching_lines = re.findall(
-                    rf'( {{8,12}}\(\s*"{old_lowercase_name}",.*?\),\n)(?: {{4,12}}\(|\])', file, re.DOTALL
+                    rf'( {{8,12}}\(\s*"{old_lowercase_name}",.*?\),\n)(?: {{4,12}}\(|\])', file, re.Flag.DOTALL
                 )
 
             for match in matching_lines:
