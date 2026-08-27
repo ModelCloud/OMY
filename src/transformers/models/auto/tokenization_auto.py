@@ -17,6 +17,7 @@ import fnmatch
 import importlib
 import json
 import os
+import sys
 from collections import OrderedDict
 from typing import Any
 
@@ -59,6 +60,7 @@ logger = logging.get_logger(__name__)
 
 # V5: Simplified mapping - single tokenizer class per model type (always prefer tokenizers-based)
 REGISTERED_TOKENIZER_CLASSES: dict[str, type[Any]] = {}
+REGISTERED_FAST_ALIASES: dict[str, type[Any]] = {}
 
 TOKENIZER_MAPPING_NAMES = OrderedDict[str, str | None](
     [
@@ -485,6 +487,13 @@ def _use_mistral_format(
 
 
 def tokenizer_class_from_name(class_name: str) -> type[Any] | None:
+    # Bloom tokenizer classes were removed but should map to the fast backend for BC
+    if class_name in {"BloomTokenizer", "BloomTokenizerFast"}:
+        return TokenizersBackend
+
+    if class_name in REGISTERED_FAST_ALIASES:
+        return REGISTERED_FAST_ALIASES[class_name]
+
     if class_name in REGISTERED_TOKENIZER_CLASSES:
         return REGISTERED_TOKENIZER_CLASSES[class_name]
 
@@ -504,6 +513,11 @@ def tokenizer_class_from_name(class_name: str) -> type[Any] | None:
                 module = importlib.import_module(f".{module_name}", "transformers.models")
             try:
                 result = getattr(module, class_name)
+                # BC v5: expose XxxFast alias and tokenization_*_fast submodule for pre-v5 remote code.
+                if (submod := getattr(result, "__module__", None)) and submod in sys.modules:
+                    base_mod = sys.modules[submod]
+                    setattr(base_mod, result.__name__ + "Fast", result)
+                    sys.modules.setdefault(submod + "_fast", base_mod)
                 return result
             except AttributeError:
                 continue
@@ -513,10 +527,15 @@ def tokenizer_class_from_name(class_name: str) -> type[Any] | None:
             return tokenizer
 
     # We did not find the class, but maybe it's because a dep is missing. In that case, the class will be in the main
+    # We did not find the class, but maybe it's because a dep is missing. In that case, the class will be in the main
     # init and we return the proper dummy to get an appropriate error message.
     main_module = importlib.import_module("transformers")
     if hasattr(main_module, class_name):
         return getattr(main_module, class_name)
+
+    # BC v5: If a XxxFast class is not found, retry without 'Fast' for tokenizers saved pre-v5.
+    if class_name.endswith("Fast"):
+        return tokenizer_class_from_name(class_name[:-4])
 
     return None
 
@@ -984,6 +1003,9 @@ class AutoTokenizer:
         for candidate in (slow_tokenizer_class, fast_tokenizer_class, tokenizer_class):
             if candidate is not None:
                 REGISTERED_TOKENIZER_CLASSES[candidate.__name__] = candidate
+
+        if slow_tokenizer_class is not None and fast_tokenizer_class is not None:
+            REGISTERED_FAST_ALIASES[slow_tokenizer_class.__name__] = fast_tokenizer_class
 
         TOKENIZER_MAPPING.register(config_class, tokenizer_class, exist_ok=exist_ok)
 
