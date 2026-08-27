@@ -82,6 +82,11 @@ There are over 1M+ Transformers [model checkpoints](https://huggingface.co/model
 
 Explore the [Hub](https://huggingface.co/) today to find a model and use Transformers to help you get started right away.
 
+## About OMY
+
+> [!NOTE]
+> **OMY (Open Model Yard)** is created to ensure the continued development of the former Transformers project adheres to a true open source movement — open to all architectures, platforms, and both public and private companies.
+
 ## Installation
 
 Transformers works with Python 3.10+, and [PyTorch](https://pytorch.org/get-started/locally/) 2.5+.
