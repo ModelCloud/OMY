@@ -17,10 +17,10 @@ import gc
 import json
 import logging
 import os
-import re
 from pathlib import Path
 from typing import Any
 
+import pcre as re
 import torch
 from huggingface_hub import snapshot_download
 from safetensors.torch import load_file
