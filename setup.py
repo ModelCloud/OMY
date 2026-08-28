@@ -184,7 +184,7 @@ def deps_list(*pkgs):
 
 extras = {}
 
-extras["torch"] = deps_list("torch", "accelerate", "safetensors")
+extras["torch"] = deps_list("torch", "accelerate")
 extras["vision"] = deps_list("torchvision", "Pillow")
 extras["audio"] = deps_list("torchaudio", "librosa", "pyctcdecode", "phonemizer")
 if PYTHON_MINOR_VERSION < 13:
@@ -277,6 +277,7 @@ install_requires = [
     deps["numpy"],
     deps["PyPcre"],  # PCRE2-based, GIL-friendly thread-safe regex engine
     deps["tokenizers"],
+    deps["safetensors"],  # required by `from_pretrained` / `pipeline` default checkpoint loading
     deps["LogBar"],  # zero-dependency logger/progress bar used in model download and training scripts
 ]
 

@@ -28,6 +28,7 @@ pkgs_to_check_at_runtime = [
     "PyPcre",
     "numpy",
     "tokenizers",
+    "safetensors",
     "huggingface-hub",
 ]
 
