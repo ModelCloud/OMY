@@ -15,4 +15,5 @@
 
 from logbar import logging_redirect_tqdm, tqdm, trange
 
+
 __all__ = ["logging_redirect_tqdm", "tqdm", "trange"]
