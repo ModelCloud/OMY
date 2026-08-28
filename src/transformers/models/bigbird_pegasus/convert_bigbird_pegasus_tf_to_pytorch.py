@@ -16,9 +16,10 @@ import argparse
 
 import tensorflow as tf
 import torch
-from tqdm import tqdm
 
 from transformers import BigBirdPegasusConfig, BigBirdPegasusForConditionalGeneration
+
+from ...utils.tqdm import tqdm
 
 
 INIT_COMMON = [

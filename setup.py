@@ -151,7 +151,7 @@ _deps = [
     "torchaudio",
     "torchvision",
     "pyctcdecode>=0.4.0",
-    "tqdm>=4.60",
+    "LogBar>=0.4.13",
     "typer",
     "unidic>=1.0.2",
     "unidic_lite>=1.0.7",
@@ -279,7 +279,7 @@ install_requires = [
     deps["tokenizers"],
     deps["typer"],  # CLI utilities. In practice, already a dependency of huggingface_hub but we use it as well
     deps["safetensors"],
-    deps["tqdm"],  # progress bars in model download and training scripts
+    deps["LogBar"],  # zero-dependency logger/progress bar used in model download and training scripts
 ]
 
 

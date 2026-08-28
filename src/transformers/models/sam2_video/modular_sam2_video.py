@@ -25,7 +25,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from huggingface_hub.dataclasses import strict
 from torch import Tensor
-from tqdm import tqdm
 
 from ... import initialization as init
 from ...activations import ACT2FN
@@ -41,6 +40,7 @@ from ...utils import (
 )
 from ...utils.generic import TransformersKwargs
 from ...utils.output_capturing import OutputRecorder
+from ...utils.tqdm import tqdm
 from ...video_utils import VideoInput
 from ..auto import CONFIG_MAPPING, AutoConfig
 from ..sam2.configuration_sam2 import (

@@ -24,14 +24,13 @@ from typing import Any
 
 import torch
 from torch import nn
-from tqdm import tqdm
-from tqdm.contrib.logging import logging_redirect_tqdm
 
 from ...configuration_utils import PretrainedConfig
 from ...generation.configuration_utils import ContinuousBatchingConfig, GenerationConfig
 from ...utils.generic import is_flash_attention_requested
 from ...utils.import_utils import is_flash_attn_2_available, is_flash_attn_3_available
 from ...utils.logging import logging
+from ...utils.tqdm import logging_redirect_tqdm, tqdm
 from ..logits_process import LogitsProcessorList
 from .cache import PagedAttentionCache
 from .cb_logits_processors import ContinuousBatchingLogitsProcessorList

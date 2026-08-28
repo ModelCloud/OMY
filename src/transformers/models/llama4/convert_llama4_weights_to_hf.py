@@ -7,7 +7,6 @@ import os
 import pcre as re
 import torch
 from tokenizers import AddedToken, processors
-from tqdm import tqdm
 
 from transformers import (
     GenerationConfig,
@@ -20,6 +19,8 @@ from transformers import (
     PreTrainedTokenizerFast,
 )
 from transformers.integrations.tiktoken import TikTokenConverter
+
+from ...utils.tqdm import tqdm
 
 
 _OFFLINE_QUANT_COMPATIBLE = os.environ.get("OFFLINE_QUANT_COMPATIBLE", "0") == "1"

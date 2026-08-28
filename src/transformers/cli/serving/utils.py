@@ -397,7 +397,7 @@ def make_progress_tqdm_class(callback: Callable, model_id: str) -> type:
     Returns:
         A tqdm subclass that forwards progress to *callback*.
     """
-    from tqdm.auto import tqdm as base_tqdm
+    from ...utils.tqdm import tqdm as base_tqdm
 
     download_aggregator = DownloadAggregator(callback, model_id)
 

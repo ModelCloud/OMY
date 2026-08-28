@@ -20,7 +20,6 @@ from pathlib import Path
 
 import pcre as re
 import yaml
-from tqdm import tqdm
 
 from transformers.models.marian.convert_marian_to_pytorch import (
     FRONT_MATTER_TEMPLATE,
@@ -29,6 +28,8 @@ from transformers.models.marian.convert_marian_to_pytorch import (
     download_and_unzip,
     get_system_metadata,
 )
+
+from ...utils.tqdm import tqdm
 
 
 DEFAULT_REPO = "Tatoeba-Challenge"
