@@ -33,9 +33,9 @@ from logging import captureWarnings as _captureWarnings
 from typing import Any
 
 import huggingface_hub.utils as hf_hub_utils
-from tqdm import auto as tqdm_lib
 
 from .._typing import TransformersLogger
+from . import tqdm as tqdm_lib
 
 
 _lock = threading.Lock()
@@ -403,19 +403,19 @@ tqdm = _tqdm_cls()
 
 
 def is_progress_bar_enabled() -> bool:
-    """Return a boolean indicating whether tqdm progress bars are enabled."""
+    """Return a boolean indicating whether LogBar progress bars are enabled."""
     return bool(_tqdm_active)
 
 
 def enable_progress_bar():
-    """Enable tqdm progress bar."""
+    """Enable LogBar progress bar."""
     global _tqdm_active
     _tqdm_active = True
     hf_hub_utils.enable_progress_bars()
 
 
 def disable_progress_bar():
-    """Disable tqdm progress bar."""
+    """Disable LogBar progress bar."""
     global _tqdm_active
     _tqdm_active = False
     hf_hub_utils.disable_progress_bars()
@@ -423,12 +423,12 @@ def disable_progress_bar():
 
 def set_tqdm_hook(hook: Callable[[Callable[..., Any], tuple[Any, ...], dict[str, Any]], Any] | None):
     """
-    Set a hook that customizes tqdm creation.
+    Set a hook that customizes LogBar progress bar creation.
 
-    The hook is called with the tqdm factory to use (either `tqdm.auto.tqdm` or an empty shim), along with the
-    positional and keyword arguments that would have been passed to tqdm. The hook should return an object compatible
-    with tqdm (i.e. implementing the methods your code relies on, such as `update`, `close`, context manager methods,
-    etc.).
+    The hook is called with the progress factory to use (either `transformers.utils.tqdm.tqdm` or an empty shim),
+    along with the positional and keyword arguments that would have been passed to the progress bar. The hook should
+    return an object compatible with tqdm (i.e. implementing the methods your code relies on, such as `update`,
+    `close`, context manager methods, etc.).
 
     Passing `None` clears the hook.
 

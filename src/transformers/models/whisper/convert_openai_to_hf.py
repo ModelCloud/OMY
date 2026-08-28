@@ -26,7 +26,6 @@ from typing import Any
 import torch
 from huggingface_hub.utils import insecure_hashlib
 from torch import nn
-from tqdm import tqdm
 
 from transformers import (
     GenerationConfig,
@@ -39,6 +38,8 @@ from transformers import (
 )
 from transformers.models.whisper.tokenization_whisper import LANGUAGES, bytes_to_unicode
 from transformers.utils.import_utils import is_tiktoken_available
+
+from ...utils.tqdm import tqdm
 
 
 _MODELS = {

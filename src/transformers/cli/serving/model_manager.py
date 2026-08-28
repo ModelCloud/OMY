@@ -24,12 +24,12 @@ from functools import lru_cache
 from typing import TYPE_CHECKING
 
 from huggingface_hub import scan_cache_dir
-from tqdm import tqdm
 
 import transformers
 from transformers import BitsAndBytesConfig, PreTrainedTokenizerBase
 
 from ...utils import logging
+from ...utils.tqdm import tqdm
 from .utils import Modality, make_progress_tqdm_class, reset_torch_cache
 
 

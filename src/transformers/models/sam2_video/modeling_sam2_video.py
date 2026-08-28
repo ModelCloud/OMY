@@ -29,7 +29,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
-from tqdm import tqdm
 
 from ... import initialization as init
 from ...activations import ACT2FN
@@ -42,6 +41,7 @@ from ...pytorch_utils import compile_compatible_method_lru_cache
 from ...utils import ModelOutput, auto_docstring, can_return_tuple, logging
 from ...utils.generic import TransformersKwargs, is_flash_attention_requested
 from ...utils.output_capturing import OutputRecorder
+from ...utils.tqdm import tqdm
 from ..auto import AutoModel
 from .configuration_sam2_video import Sam2VideoConfig, Sam2VideoMaskDecoderConfig, Sam2VideoPromptEncoderConfig
 

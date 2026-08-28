@@ -17,7 +17,6 @@ from typing import NamedTuple
 
 import numpy as np
 import pcre as re
-from tqdm.auto import tqdm
 
 from .integrations import (
     GGUF_CONFIG_DEFAULTS_MAPPING,
@@ -28,6 +27,7 @@ from .integrations import (
 from .utils import is_torch_available
 from .utils.import_utils import is_gguf_available
 from .utils.logging import get_logger
+from .utils.tqdm import tqdm
 
 
 if is_torch_available():

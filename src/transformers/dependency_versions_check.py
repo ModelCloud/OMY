@@ -20,11 +20,11 @@ from .utils.versions import require_version, require_version_core
 # (usually the ones defined in `install_requires` in setup.py)
 #
 # order specific notes:
-# - tqdm must be checked before tokenizers
+# - LogBar must be checked before tokenizers
 
 pkgs_to_check_at_runtime = [
     "python",
-    "tqdm",
+    "LogBar",
     "PyPcre",
     "packaging",
     "filelock",

@@ -599,7 +599,7 @@ class WhisperGenerationMixin(GenerationMixin):
 
         The `monitor_progress` callback can be used to monitor the progress of the transcription:
         ```python
-        >>> from tqdm import tqdm
+        >>> from transformers.utils.tqdm import tqdm
 
         >>> # prepare inputs like above
 

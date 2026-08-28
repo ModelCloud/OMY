@@ -21,11 +21,11 @@ import math
 from dataclasses import dataclass
 
 import numpy as np
-from tqdm.auto import tqdm
 
 from .trainer_utils import IntervalStrategy, SaveStrategy, has_length
 from .training_args import TrainingArguments
 from .utils import logging
+from .utils.tqdm import tqdm
 
 
 logger = logging.get_logger(__name__)

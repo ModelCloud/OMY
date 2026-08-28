@@ -22,12 +22,12 @@ from typing import Any
 import torch
 import torch.nn.functional as F
 from torch import Tensor
-from tqdm.auto import tqdm
 
 from transformers.models.sam3.modeling_sam3 import Sam3VisionNeck
 
 from ...modeling_utils import PreTrainedModel
 from ...utils import ModelOutput, auto_docstring, is_kernels_available, logging
+from ...utils.tqdm import tqdm
 from ..auto import AutoModel
 from .configuration_sam3_video import Sam3VideoConfig
 
