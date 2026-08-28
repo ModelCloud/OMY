@@ -184,13 +184,15 @@ def deps_list(*pkgs):
 
 extras = {}
 
-extras["torch"] = deps_list("torch", "accelerate")
+extras["torch"] = deps_list("torch", "accelerate", "safetensors")
 extras["vision"] = deps_list("torchvision", "Pillow")
 extras["audio"] = deps_list("torchaudio", "librosa", "pyctcdecode", "phonemizer")
 if PYTHON_MINOR_VERSION < 13:
     extras["audio"] += deps_list("kenlm")
 extras["video"] = deps_list("av")
 extras["timm"] = deps_list("timm")
+extras["cli"] = deps_list("typer")
+
 extras["quality"] = deps_list(
     "datasets", "ruff", "GitPython", "urllib3", "libcst", "rich", "ty", "tomli", "transformers-mlinter"
 )
@@ -271,14 +273,10 @@ extras["dev"] = extras["all"] + extras["testing"] + extras["ja"] + extras["sklea
 
 # Those define the hard dependencies of `transformers`
 install_requires = [
-    deps["huggingface-hub"],
+    deps["huggingface-hub"],  # also brings packaging, pyyaml, filelock, requests, fsspec, tqdm transitively
     deps["numpy"],
-    deps["packaging"],  # utilities from PyPA to e.g., compare versions
-    deps["pyyaml"],  # used for the model cards metadata
     deps["PyPcre"],  # PCRE2-based, GIL-friendly thread-safe regex engine
     deps["tokenizers"],
-    deps["typer"],  # CLI utilities. In practice, already a dependency of huggingface_hub but we use it as well
-    deps["safetensors"],
     deps["LogBar"],  # zero-dependency logger/progress bar used in model download and training scripts
 ]
 

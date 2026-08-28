@@ -26,31 +26,17 @@ pkgs_to_check_at_runtime = [
     "python",
     "LogBar",
     "PyPcre",
-    "packaging",
-    "filelock",
     "numpy",
     "tokenizers",
     "huggingface-hub",
-    "safetensors",
-    "accelerate",
-    "pyyaml",
 ]
 
 for pkg in pkgs_to_check_at_runtime:
     if pkg in deps:
         if pkg == "tokenizers":
-            # must be loaded here, or else tqdm check may fail
             from .utils import is_tokenizers_available
 
             if not is_tokenizers_available():
-                continue  # not required, check version only if installed
-        elif pkg == "accelerate":
-            # must be loaded here, or else tqdm check may fail
-            from .utils import is_accelerate_available
-
-            # Maybe switch to is_torch_available in the future here so that Accelerate is hard dep of
-            # Transformers with PyTorch
-            if not is_accelerate_available():
                 continue  # not required, check version only if installed
 
         require_version_core(deps[pkg])
