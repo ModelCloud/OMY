@@ -151,7 +151,7 @@ _deps = [
     "torchaudio",
     "torchvision",
     "pyctcdecode>=0.4.0",
-    "LogBar>=0.4.13",
+    "LogBar>=0.4.14",
     "typer",
     "unidic>=1.0.2",
     "unidic_lite>=1.0.7",
